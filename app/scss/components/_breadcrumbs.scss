@@ -1,0 +1,40 @@
+.breadcrumbs {
+
+	padding-top: 1.125rem;
+	@include _992 {
+		padding-top: 1.55rem;
+	}
+
+	font-weight: 300;
+
+	// .breadcrumbs__link
+
+	&__link {
+		letter-spacing: -0.04em;
+		color: var(--secondary);
+
+		@media (any-hover: hover) {
+			transition: opacity .2s ease;
+			&:hover {
+				opacity: .8;
+			}
+		
+			&:active {
+				opacity: .6;
+			}
+		}
+	}
+
+	// .breadcrumbs__separator
+
+	&__separator {
+		color: var(--secondary);
+		margin: 0 0.25rem;
+	}
+
+	// .breadcrumbs__current
+
+	&__current {
+		color: #808080;
+	}
+}

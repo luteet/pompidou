@@ -1,0 +1,539 @@
+@@include("html/_header.html", {
+	"banner": ""
+})
+
+	<main class="main">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<a href="brands.html" class="breadcrumbs__link">Бренди</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">liu jo</span>
+			</div>
+			<h1 class="hero__title">
+				liu jo
+			</h1>
+			<div class="hero__footer is-sticky">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row">
+						<div class="hero__footer_col">
+							<button class="filter_open" type="button">
+								Фільтрувати
+								<span class="filter_open__length"></span>
+							</button>
+							<form class="filter" data-append-to="filter-mobile">
+								<div class="filter__wrapper">
+									<div class="filter__header">
+										<h2 class="filter__title">фільтр</h2>
+										<button class="filter__close" type="button">
+											<svg width="32" height="32">
+												<use href="img/sprites.svg#close"></use>
+											</svg>
+										</button>
+									</div>
+									<div class="filter__result visible-on-mob" id="filter-result"></div>
+									<ul class="filter__list">
+										<li id="gender" class="visible-on-mob"></li>
+										<li id="categories" class="visible-on-mob"></li>
+										<li class="filter__item" data-name="size" data-label="Розмір: ">
+											<button class="filter__item_target" type="button" aria-label="Розмір">
+												<span>Розмір</span>
+												<span class="filter__item_length"></span>
+												<svg width="13" height="7">
+													<use href="img/sprites.svg#drop-down-arrow"></use>
+												</svg>
+											</button>
+											<div class="filter__item_block">
+												<div>
+													<div class="filter__round_check">
+														<h2 class="filter__title">
+															укажіть ваш розмір
+														</h2>
+														<ul class="filter__round_check_list">
+															<li>
+																<label class="round_checkbox">
+																	<input type="checkbox" name="size" value="38" data-text="38" class="round_checkbox__input">
+																	<span class="round_checkbox__element">38</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox">
+																	<input type="checkbox" name="size" value="40" data-text="40" disabled class="round_checkbox__input">
+																	<span class="round_checkbox__element">40</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox">
+																	<input type="checkbox" name="size" value="42" data-text="42" class="round_checkbox__input">
+																	<span class="round_checkbox__element">42</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox">
+																	<input type="checkbox" name="size" value="44" data-text="44" disabled class="round_checkbox__input">
+																	<span class="round_checkbox__element">44</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox">
+																	<input type="checkbox" name="size" value="46" data-text="46" disabled class="round_checkbox__input">
+																	<span class="round_checkbox__element">46</span>
+																</label>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="filter__item" data-name="price" data-add-symbol="$">
+											<button class="filter__item_target" type="button" aria-label="Ціна">
+												<span>Ціна</span>
+												<span class="filter__item_length"></span>
+												<svg width="13" height="7">
+													<use href="img/sprites.svg#drop-down-arrow"></use>
+												</svg>
+											</button>
+											<div class="filter__item_block">
+												<div>
+													<div class="filter__price">
+														<div class="filter__price_range range">
+															<div class="range__header">
+																<div class="range__input_item">
+																	<span>Від</span>
+																	<input type="text" data-checked-message="Ціна від: " inputmode="numeric" pattern="[0-9]*" name="min-price" data-is-min data-value="1000" value="1000" placeholder="0">
+																</div>
+																<div class="range__input_item">
+																	<span>До</span>
+																	<input type="text" data-checked-message="Ціна до: " inputmode="numeric" pattern="[0-9]*" name="min-price" data-is-max data-value="50000" value="50000" placeholder="0">
+																</div>
+															</div>
+															<div class="range__element" data-min="1000" data-max="50000" data-min-value="1000" data-max-value="50000">
+																<div></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="filter__item" data-name="color" data-label="Колір: ">
+											<button class="filter__item_target" type="button" aria-label="Колір">
+												<span>Колір</span>
+												<span class="filter__item_length"></span>
+												<svg width="13" height="7">
+													<use href="img/sprites.svg#drop-down-arrow"></use>
+												</svg>
+											</button>
+											<div class="filter__item_block">
+												<div>
+													<div class="filter__round_check is-color-mode">
+														<h2 class="filter__title">
+															укажіть колір
+														</h2>
+														<ul class="filter__round_check_list">
+															<li>
+																<label class="round_checkbox" aria-label="Червоний">
+																	<input type="radio" name="color" value="red" data-text="Червоний" class="round_checkbox__input">
+																	<span class="round_checkbox__element" style="--color: red;">
+																		<svg width="20" height="20">
+																			<use href="img/sprites.svg#check"></use>
+																		</svg>
+																	</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox" aria-label="Зелений">
+																	<input type="radio" name="color" value="green" data-text="Зелений" class="round_checkbox__input">
+																	<span class="round_checkbox__element" style="--color: green;">
+																		<svg width="20" height="20">
+																			<use href="img/sprites.svg#check"></use>
+																		</svg>
+																	</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox" aria-label="Синій">
+																	<input type="radio" name="color" value="blue" data-text="Синій" class="round_checkbox__input">
+																	<span class="round_checkbox__element" style="--color: blue;">
+																		<svg width="20" height="20">
+																			<use href="img/sprites.svg#check"></use>
+																		</svg>
+																	</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox" aria-label="Коричневий">
+																	<input type="radio" name="color" value="brown" data-text="Коричневий" class="round_checkbox__input">
+																	<span class="round_checkbox__element" style="--color: brown;">
+																		<svg width="20" height="20">
+																			<use href="img/sprites.svg#check"></use>
+																		</svg>
+																	</span>
+																</label>
+															</li>
+															<li>
+																<label class="round_checkbox" aria-label="Зелений 2">
+																	<input type="radio" name="color" value="teal" data-text="Зелений 2" class="round_checkbox__input">
+																	<span class="round_checkbox__element" style="--color: teal;">
+																		<svg width="20" height="20">
+																			<use href="img/sprites.svg#check"></use>
+																		</svg>
+																	</span>
+																</label>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="filter__item" data-name="season" data-label="Сезон: ">
+											<button class="filter__item_target" type="button" aria-label="Сезон">
+												<span>Сезон</span>
+												<span class="filter__item_length"></span>
+												<svg width="13" height="7">
+													<use href="img/sprites.svg#drop-down-arrow"></use>
+												</svg>
+											</button>
+											<div class="filter__item_block">
+												<div>
+													<div class="filter__check">
+														<div class="filter__check_list" data-simplebar>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="material-1" data-text="Матеріал 1" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Матеріал 1</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="material-1" data-text="Матеріал 2" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Матеріал 2</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="material-1" data-text="Матеріал 3" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Матеріал 3</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="material-1" data-text="Матеріал 4" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Матеріал 4</span>
+															</label>
+														</div>
+														<button class="filter__check_button button is-min" type="button">
+															застосувати
+														</button>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="filter__item" data-name="season" data-label="Сезон: ">
+											<button class="filter__item_target" type="button" aria-label="Сезон">
+												<span>Сезон</span>
+												<span class="filter__item_length"></span>
+												<svg width="13" height="7">
+													<use href="img/sprites.svg#drop-down-arrow"></use>
+												</svg>
+											</button>
+											<div class="filter__item_block">
+												<div>
+													<div class="filter__check">
+														<div class="filter__check_list" data-simplebar>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="summer" data-text="Літо" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Літо</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="fall" data-text="Осінь" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Осінь</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="winter" data-text="Зима" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Зима</span>
+															</label>
+															<label class="filter__check_element checkbox">
+																<input type="checkbox" name="spring" data-text="Весна" class="checkbox__input">
+																<span class="checkbox__element">
+																	<svg width="20" height="20">
+																		<use href="img/sprites.svg#check"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">Весна</span>
+															</label>
+														</div>
+														<button class="filter__check_button button is-min" type="button">
+															застосувати
+														</button>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="filter__footer visible-on-mob">
+									<button type="button" class="filter__footer_reset">
+										Скинути
+									</button>
+									<button type="button" class="filter__footer_submit button is-min">
+										готово
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="hero__footer_col">
+							<div class="categories_filter">
+								<div class="visible-on-desktop">
+									<div class="categories_filter__item" data-append-to="gender">
+										<button class="categories_filter__item_target" data-name="gender" type="button" aria-label="Для неї">
+											<span class="categories_filter__item_name">Стать</span>
+											<span class="categories_filter__item_checked">Для неї</span>
+											<svg width="13" height="7">
+												<use href="img/sprites.svg#drop-down-arrow"></use>
+											</svg>
+										</button>
+										<div class="categories_filter__item_block" data-name="gender">
+											<div>
+												<div class="categories_filter__item_container min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+													<ul class="categories_filter__item_list">
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="woman" name="gender">
+																<span>Для неї</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="man" name="gender">
+																<span>Для нього</span>
+															</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="visible-on-desktop">
+									<div class="categories_filter__item" data-append-to="categories">
+										<button class="categories_filter__item_target" type="button" aria-label="liu jo">
+											<span class="categories_filter__item_name">Бренд</span>
+											<span class="categories_filter__item_checked">liu jo</span>
+											<svg width="13" height="7">
+												<use href="img/sprites.svg#drop-down-arrow"></use>
+											</svg>
+										</button>
+										<div class="categories_filter__item_block" data-name="category">
+											<div>
+												<div class="categories_filter__item_container min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+													<ul class="categories_filter__item_list">
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-1" name="category">
+																<span>Baldinini</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-2" name="category">
+																<span>Furla</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-3" name="category">
+																<span>Liu Jo</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-4" name="category">
+																<span>Love Moschino</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-5" name="category">
+																<span>Pinko</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-6" name="category">
+																<span>Trussardi</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-7" name="category">
+																<span>Versace Jeans</span>
+															</label>
+														</li>
+														<li class="categories_filter__item_element">
+															<label>
+																<input type="radio" value="category-8" name="category">
+																<span>premiata</span>
+															</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="sort_open" type="button">
+								Сортувати
+							</button>
+							<form class="sort" data-append-to="sort-mobile">
+								<div class="sort__wrapper">
+									<div class="sort__header visible-on-mob">
+										<h3 class="sort__title">
+											сортування
+										</h3>
+										<button type="button" class="sort__close">
+											<svg width="24" height="24">
+												<use href="img/sprites.svg#close"></use>
+											</svg>
+										</button>
+									</div>
+									<span class="sort__name visible-on-desktop">Сортувати</span>
+									<button class="sort__target" type="button" aria-label="За популярністю">
+										<span>За популярністю</span>
+										<svg width="13" height="7">
+											<use href="img/sprites.svg#drop-down-arrow"></use>
+										</svg>
+									</button>
+									<div class="sort__block" data-name="sort">
+										<ul class="sort__list">
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-1" name="sort">
+													<span>за оновленням</span>
+												</label>
+											</li>
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-2" checked name="sort">
+													<span>за популярністю</span>
+												</label>
+											</li>
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-3" name="sort">
+													<span>за ціною</span>
+												</label>
+											</li>
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-4" name="sort">
+													<span>за знижкою</span>
+												</label>
+											</li>
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-5" name="sort">
+													<span>новинки</span>
+												</label>
+											</li>
+											<li class="sort__element">
+												<label>
+													<input type="radio" value="sort-6" name="sort">
+													<span>актуальне</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="hero__footer_row">
+						<div class="filter_info" data-append-to="filter-result">
+							<ul class="filter_checked_list"></ul>
+							<button class="filter_reset" type="button">
+								Очистити фільтри
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="products container">
+			<ul class="products__list">
+				@@loop("html/_product-card.html", [
+
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+					
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+
+					{"image": "1"},
+					{"image": "2"},
+					{"image": "3"},
+					{"image": "4"},
+
+				])
+			</ul>
+			<div class="products__footer">
+				<button class="products__load_more button is-transparent" type="button">
+					показати ще
+				</button>
+			</div>
+		</div>
+		@@include("html/_sale-section.html")
+		@@include("html/_seo-text.html")
+	</main>
+	<div id="filter-mobile"></div>
+	<div id="sort-mobile"></div>
+
+@@include("html/_footer.html")

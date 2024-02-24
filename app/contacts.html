@@ -1,0 +1,81 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main add-padding-bottom">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">Контакти</span>
+			</div>
+			<h1 class="hero__title">
+				Контакти
+			</h1>
+			<div class="hero__footer is-sticky is-light visible-on-desktop">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row is-mode-2">
+						<div class="hero__footer_col">
+							<span>Колл-центр працює щодня з 10:00 до 20:00</span>
+						</div>
+						<div class="hero__footer_col">
+							<span>pompidoulviv@gmail.com</ы>
+							<span>(050) 212-71-37</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="page_section container">
+			<div class="page_section__aside">
+				<div class="page_section__nav">
+					<button class="page_section__nav_target visible-on-mob" aria-label="Контакти">
+						<span>Контакти</span>
+					</button>
+					@@include("html/_page-nav.html", {
+						"link_1": "",
+						"link_2": "",
+						"link_3": "",
+						"link_4": "",
+						"link_5": "",
+						"link_6": "is-current",
+					})
+				</div>
+			</div>
+			<div class="page_section__main">
+				<div class="page_section__content">
+					<h2>Якщо у вас є питання, пропозиції або коментар, напишіть нам повідомлення</h2>
+				</div>
+				<div class="page_section__contacts contacts">
+					<div class="contacts__main">
+						<label>
+							<span>Ім'я</span>
+							<input type="text" name="name" placeholder="Ім'я" required>
+						</label>
+						<label>
+							<span>Телефон</span>
+							<input type="tel" name="phone" placeholder="Телефон" required>
+						</label>
+						<label>
+							<span>Електронна адреса</span>
+							<input type="email" name="email" placeholder="Електронна адреса">
+						</label>
+						<label class="is-full">
+							<span>Повідомлення</span>
+							<textarea name="message" placeholder="Повідомлення" required></textarea>
+						</label>
+					</div>
+					<div class="contacts__footer">
+						<div class="contacts__note">
+							Натискаючи “Надіслати”, ви погоджуєтесь з правилами <a href="#">Політики Конфіденційності</a>
+						</div>
+						<button class="contacts__submit button" type="submit">
+							Надіслати
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+@@include("html/_footer.html")

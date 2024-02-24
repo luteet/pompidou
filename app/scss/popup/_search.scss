@@ -1,0 +1,249 @@
+.search_popup {
+
+	padding: 0;
+
+	// .search_popup__wrapper
+
+	&__wrapper {
+	}
+
+	// .search_popup__bg
+
+	&__bg {
+	}
+
+	// .search_popup__body
+
+	&__body {
+		max-width: 100%;
+		padding: 0;
+		@include _550 {
+			padding: 0;
+		}
+
+		background: var(--white);
+
+		height: calc(var(--vh) * 100);
+		
+	}
+
+	// .search_popup__close-btn
+
+	&__close-btn {
+		top: 1rem; right: 0.625rem;
+		width: 3rem; height: 3rem;
+		border-radius: 50%;
+
+		z-index: 2;
+
+		@include _768 {
+			width: 4.5rem; height: 4.5rem;
+			border: 0.0625rem solid #808080;
+			right: var(--container-padding);
+		}
+
+		@include _992 {
+			top: 2rem;
+			width: 6.5rem; height: 6.5rem;
+		}
+
+		@media (any-hover: hover) {
+
+			transition: color .2s ease, border-color .2s ease, background .2s ease;
+
+			&:hover {
+				color: var(--white);
+				background: var(--secondary-hover);
+				border-color: var(--secondary-hover);
+			}
+		
+			&:active {
+				color: var(--white);
+				background: var(--secondary-active);
+				border-color: var(--secondary-active);
+			}
+		}
+	}
+
+	// .search_popup__container
+
+	&__container {
+		max-height: calc(var(--vh) * 100);
+		padding: 1.25rem 0;
+		@include _768 {
+			padding: 2rem 0;
+		}
+	}
+
+	// .search_popup__title
+
+	&__title {
+		padding: 0 var(--container-padding);
+
+		font-family: var(--title-font);
+		font-size: 3.125rem;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+
+		@include _992 {
+			font-size: 1rem;
+			font-family: var(--main-font);
+			font-weight: 300;
+			line-height: 1;
+			letter-spacing: -0.04em;
+			text-transform: none;
+		}
+	}
+
+	// .search_popup__form
+
+	&__form {
+		padding-top: 1.25rem;
+
+		@include _550 {
+			padding-top: 0;
+		}
+
+		position: relative;
+
+		input {
+
+			width: 100%;
+
+			font-family: var(--title-font);
+			font-size: 1.875rem;
+			line-height: 1;
+			letter-spacing: 0.04em;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			padding: 1.25rem var(--container-padding);
+
+			border-bottom: 0.0625rem solid #D0D0D0;
+
+			@include _550 {
+				font-size: 4.5rem;
+			}
+
+			@include _768 {
+				font-size: 7.5rem;
+				padding: 1.25rem 11.5rem 1.25rem var(--container-padding);
+			}
+
+			@include _992 {
+				font-size: 10.75rem;
+			}
+		}
+
+		input + span {
+			color: #808080;
+
+			position: absolute;
+			left: 0; bottom: 0;
+			transform: translate(0,200%);
+
+			font-weight: 300;
+			letter-spacing: -0.04em;
+
+			padding: 0 var(--container-padding);
+		}
+	}
+
+	// .search_popup__result_info
+
+	&__result_info {
+		padding: 1.25rem var(--container-padding) 0;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+
+		@include _550 {
+			padding: 2rem var(--container-padding) 0;
+			justify-content: stretch;
+		}
+	}
+
+	// .search_popup__length
+
+	&__length {
+		font-family: var(--title-font);
+		font-size: 1.875rem;
+		line-height: 1;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+
+		@include _550 {
+			font-size: 3.125rem;
+			letter-spacing: 0.12em;
+		}
+	}
+
+	// .search_popup__more
+
+	&__more {
+		color: var(--secondary);
+		font-weight: 300;
+		line-height: 1;
+		letter-spacing: -0.04em;
+
+		position: relative;
+		display: inline-block;
+		padding: 0.3125rem 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0; bottom: 0;
+			width: 100%; height: 1px;
+			background: var(--secondary);
+			transform-origin: 0 0;
+			transform: scale(0,1) translateZ(0.001px);
+
+			transition: transform .2s ease;
+		}
+
+		@media (any-hover: hover) {
+			transition: opacity .2s ease;
+			&:hover::before {
+				transform: scale(1,1) translateZ(0.001px);
+			}
+		
+			&:active {
+				opacity: .5;
+			}
+		}
+	}
+
+	// .search_popup__result
+
+	&__result {
+		padding: 1.5rem var(--container-padding) 0;
+		@include _550 {
+			padding: 2.5rem var(--container-padding) 0;
+		}
+	}
+
+	// .search_popup__list
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		gap: 2rem 0.4375rem;
+
+		@include _550 {
+			grid-template-columns: repeat(3,1fr);
+		}
+
+		@include _768 {
+			grid-template-columns: repeat(4,1fr);
+		}
+
+		@include _992 {
+			gap: 2.5rem 1.25rem;
+		}
+	}
+}

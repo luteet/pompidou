@@ -1,0 +1,82 @@
+
+@font-face {
+	@include font-include('TT Bluescreens Trl', 700, swap, normal, 'TT-Bluescreens-Trial-Bold');
+}
+
+@font-face {
+	@include font-include('Proxima Nova', 300, swap, normal, 'ProximaNova-Light');
+}
+
+@font-face {
+	@include font-include('Proxima Nova', 400, swap, normal, 'ProximaNova-Regular');
+}
+
+@font-face {
+	@include font-include('Proxima Nova', 600, swap, normal, 'ProximaNova-Semibold');
+}
+
+@font-face {
+	@include font-include('Proxima Nova', 700, swap, normal, 'ProximaNova-Bold');
+}
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 115%;
+
+	font-size: 1.875rem;
+
+	@include _768 {
+		font-size: 2.5rem;
+	}
+
+	@include _992 {
+		font-size: 3.125rem;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 700;
+
+	font-size: 1.125rem;
+
+	@include _768 {
+		font-size: 1.5rem;
+	}
+
+	@include _992 {
+		font-size: 1.875rem;
+	}
+
+}
+
+.section_title {
+
+	font-size: 3.125rem;
+	line-height: 1;
+	letter-spacing: 0.625rem;
+	font-family: var(--title-font);
+	font-weight: 700;
+	text-transform: uppercase;
+
+	&.is-min {
+		font-size: 1.875rem;
+		line-height: 1.25;
+		letter-spacing: 0.4rem;
+
+		@include _550 {
+			line-height: 1;
+			font-size: 3.125rem;
+			letter-spacing: 0.625rem;
+		}
+	}
+
+}
+
+.section_name {
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: -0.04rem;
+}

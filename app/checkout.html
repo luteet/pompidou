@@ -1,0 +1,194 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main add-padding-bottom">
+		<section class="checkout is-disable-container">
+			<form class="checkout__body">
+				<h2 class="checkout__title section_title">
+					оформити замовлення
+				</h2>
+				<div class="checkout__cart">
+					<div class="cart_popup__title visible-on-desktop">
+						замовлення
+					</div>
+					<div class="cart_popup__table" data-currency="₴">
+						<div class="cart_popup__table_head visible-on-desktop">
+							<div class="cart_popup__length">
+								<span data-cart-products-length data-one="товар" data-two="товара" data-five="товаров">2 товари</span>
+								<span>Товарів немає</span>
+							</div>
+							<button class="cart_popup__reset" type="button">Очистити все</button>
+						</div>
+						<button class="cart_popup__list_target visible-on-mob" type="button">
+							Замовлення
+						</button>
+						<div class="cart_popup__list_container">
+							<div class="min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+								<ul class="cart_popup__list">
+									@@loop("html/_cart-item.html", [
+										{},
+										{},
+									])
+								</ul>
+							</div>
+						</div>
+						<div class="cart_popup__note">
+							<p>
+								Тут будуть товари, які ви додали до Кошику
+							</p>
+						</div>
+						<div class="cart_popup__slider splide is-visible-on-null">
+							<h3 class="cart_popup__slider_title">вас можуть зацікавити</h3>
+							<div class="cart_popup__slider_track splide__track">
+								<ul class="cart_popup__slider_list splide__list">
+									@@loop("html/_cart-slide.html", [
+										{"image": "1"},
+										{"image": "2"},
+										{"image": "3"},
+										{"image": "4"},
+										{"image": "5"},
+										{"image": "6"},
+										{"image": "7"},
+										{"image": "8"},
+										{"image": "9"},
+									])
+								</ul>
+							</div>
+						</div>
+						<div class="cart_popup__checkout" id="cart-checkout"></div>
+						<div class="cart_popup__prices">
+							<dl>
+								<dt>Вартість товарів</dt>
+								<dd data-cart-sum>40 230</dd>
+								<dt>Знижка</dt>
+								<dd data-cart-discount>15 900</dd>
+							</dl>
+						</div>
+						<dl class="cart_popup__total">
+							<dt>До сплати</dt>
+							<dd><strong data-cart-total>24 330 ₴</strong></dd>
+						</dl>
+						<div class="cart_popup__footer">
+							<button class="cart_popup__button button toggle-disabled" type="submit">
+								підтвердити замовлення
+							</button>
+						</div>
+						<div class="cart_popup__promocode">
+							<button class="cart_popup__promocode_target" type="button">
+								Застосувати промокод
+							</button>
+							<div class="cart_popup__promocode_form">
+								<input type="text" name="promocde" required>
+								<button class="cart_popup__promocode_submit button is-min">
+									Застосувати
+								</button>
+								<button class="cart_popup__promocode_close" type="button">
+									<svg width="32" height="32">
+										<use href="img/sprites.svg#close"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="cart_popup__privacy">
+							Підтверджуючи замовлення, я приймаю умови <a href="#">Публічної Оферти</a> та <a href="#">Політики Конфіденційності</a>
+						</div>
+					</div>
+				</div>
+				<div class="checkout__form_container">
+					<div class="checkout__form" data-append-to="cart-checkout">
+						<fieldset class="checkout__block">
+							<legend>Особиста інформація</legend>
+							<label class="checkout__item">
+								<span>ім'я</span>
+								<input type="text" name="name" placeholder="Ім'я" required>
+							</label>
+							<label class="checkout__item">
+								<span>Телефон</span>
+								<input type="tel" name="phone" placeholder="(0__) ---_--_--" required>
+							</label>
+						</fieldset>
+						<fieldset class="checkout__block">
+							<legend>Доставка</legend>
+							<div class="checkout__choice">
+								<span>Спосіб доставки</span>
+								<ul class="checkout__choice_list">
+									<li>
+										<label>
+											<input type="radio" name="delivery" value="courier" required checked>
+											<span>кур'єром</span>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" name="delivery" value="post" required>
+											<span>поштою</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<label class="checkout__item">
+								<span>Місто</span>
+								<input type="text" name="city" placeholder="Місто" required>
+							</label>
+							<label class="checkout__item">
+								<span>Вулиця</span>
+								<input type="text" name="street" placeholder="Вулиця" required>
+							</label>
+							<label class="checkout__item">
+								<span>Будинок</span>
+								<input type="text" name="house" placeholder="Будинок" required>
+							</label>
+							<label class="checkout__item">
+								<span>Квартира</span>
+								<input type="text" name="apartment" placeholder="Квартира">
+							</label>
+						</fieldset>
+						<fieldset class="checkout__block">
+							<legend>оплата</legend>
+							<div class="checkout__choice">
+								<span>спосіб оплати</span>
+								<ul class="checkout__choice_list">
+									<li>
+										<label>
+											<input type="radio" name="paymethod" value="upon-receipt" required checked>
+											<span>При отриманні</span>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" name="paymethod" value="online" required>
+											<span>Онлайн</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="checkout__drop_down">
+								<button class="checkout__drop_down_open" type="button">
+									Додати коментар
+								</button>
+								<div class="checkout__drop_down_block">
+									<div class="checkout__drop_down_header">
+										<h2 class="checkout__drop_down_title">
+											Коментар
+										</h2>
+										<button class="checkout__drop_down_close" type="button">
+											<svg width="32" height="32">
+												<use href="img/sprites.svg#close"></use>
+											</svg>
+										</button>
+									</div>
+									<label class="checkout__item">
+										<span>Коментар</span>
+										<input type="text" name="comment" placeholder="Коментар">
+									</label>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</form>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

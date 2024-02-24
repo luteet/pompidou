@@ -1,0 +1,74 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main  add-padding-bottom">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">Оплата та доставка</span>
+			</div>
+			<h1 class="hero__title">
+				Оплата та доставка
+			</h1>
+			<div class="hero__footer is-sticky is-light visible-on-desktop">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row is-mode-2">
+						<div class="hero__footer_col">
+							<span>Преміальний магазин італійського взуття та одягу</span>
+						</div>
+						<div class="hero__footer_col">
+							<i>Офіційний представник брендів</i>
+							<span>(050) 212-71-37</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="page_section container">
+			<div class="page_section__aside">
+				<div class="page_section__nav">
+					<button class="page_section__nav_target visible-on-mob" aria-label="Оплата та доставка">
+						<span>Оплата та доставка</span>
+					</button>
+					@@include("html/_page-nav.html", {
+						"link_1": "",
+						"link_2": "is-current",
+						"link_3": "",
+						"link_4": "",
+						"link_5": "",
+						"link_6": "",
+					})
+				</div>
+			</div>
+			<div class="page_section__main">
+				<div class="page_section__content">
+					<h2>Доставка товару здійснюється компанією «Нова пошта» за тарифами перевізника</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>—  До відділення</p>
+							<p>—  Кур’єром за адресою</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>Перед відправленням товару з Вами зв'яжеться консультант магазину Pompidou для уточнення деталей та узгодження дати доставки.</p>
+							<p>При відмові отримати товар у перевізника з будь-яких причини (наприклад, якщо товар не підходить по розміру), повернення товару здійснюється за наш рахунок.</p>
+						</div>
+					</div>
+					<h2>Способи оплати</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>—  Готівкою у відділенні</p>
+							<p>—  Готівкою кур'єру</p>
+							<p>—  Карткою на сайті</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>При повній передоплаті — доставка по Україні безкоштовна.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</в>
+	</main>
+
+@@include("html/_footer.html")

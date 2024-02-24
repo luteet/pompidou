@@ -1,0 +1,116 @@
+.contacts {
+
+	padding-top: 2.5rem;
+	@include _768 {
+		padding-top: 4rem;
+	}
+
+	// .contacts__main
+
+	&__main {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 1.25rem 0;
+
+		@include _768 {
+			gap: 1.25rem 2.5rem;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		label {
+
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+
+			span {
+
+				font-family: var(--title-font);
+				font-size: 1.125rem;
+				line-height: 1;
+				letter-spacing: 0.28em;
+				text-transform: uppercase;
+
+				@include _768 {
+					display: none;
+				}
+			}
+		}
+
+		&.is-full {
+			
+			@include _768 {
+				margin-top: 2.75rem;
+				grid-column: 1/4;
+			}
+		}
+
+		textarea {
+
+			resize: none;
+
+			height: 6.25rem;
+
+			letter-spacing: -0.04em;
+
+			padding: 0.625rem 0.75rem;
+
+			@include _768 {
+				padding: 0 0 0.75rem;
+				background: var(--white);
+				border-bottom: 1px solid #E7E7E7;
+			}
+
+			background: #F2F2F2;
+		}
+
+		input {
+
+			padding: 0.625rem 0.75rem;
+			@include _768 {
+				padding: 0 0 0.75rem;
+				background: var(--white);
+				border-bottom: 1px solid #E7E7E7;
+			}
+
+			background: #F2F2F2;
+
+			letter-spacing: -0.04em;
+		}
+	}
+
+	// .contacts__footer
+
+	&__footer {
+		padding-top: 2rem;
+
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 1.25rem;
+
+		@include _768 {
+			display: grid;
+			grid-template-columns: auto 12.8125rem;
+		}
+	}
+
+	// .contacts__note
+
+	&__note {
+
+		letter-spacing: -0.04em;
+		font-weight: 300;
+		line-height: 140%;
+
+		a {
+			color: var(--secondary);
+			text-decoration: underline;
+			text-underline-offset: 0.1875rem;
+		}
+	}
+
+	// .contacts__submit
+
+	&__submit {
+	}
+}

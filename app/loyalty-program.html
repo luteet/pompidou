@@ -1,0 +1,53 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main add-padding-bottom">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">Програма лояльності</span>
+			</div>
+			<h1 class="hero__title">
+				Програма лояльності
+			</h1>
+			<div class="hero__footer is-sticky is-light visible-on-desktop">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row is-mode-2">
+						<div class="hero__footer_col">
+							<span>Із любов'ю до наших клієнтів</span>
+						</div>
+						<div class="hero__footer_col">
+							<i>Офіційний представник брендів</i>
+							<span>(050) 212-71-37</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="page_section container">
+			<div class="page_section__aside">
+				<div class="page_section__nav">
+					<button class="page_section__nav_target visible-on-mob" aria-label="Програма лояльності">
+						<span>Програма лояльності</span>
+					</button>
+					@@include("html/_page-nav.html", {
+						"link_1": "",
+						"link_2": "",
+						"link_3": "",
+						"link_4": "",
+						"link_5": "is-current",
+						"link_6": "",
+					})
+				</div>
+			</div>
+			<div class="page_section__main">
+				<div class="page_section__content">
+					<h2>Знижка 15%, коли загальна сума ваших покупок перевищує 30 тисяч гривень</h2>
+				</div>
+			</div>
+		</div>
+	</main>
+
+@@include("html/_footer.html")

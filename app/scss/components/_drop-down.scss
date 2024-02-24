@@ -1,0 +1,24 @@
+.drop_down {
+
+	// .drop_down__target
+
+	&__target {}
+
+	// .drop_down__block
+
+	&__block {
+		position: absolute;
+		left: var(--x,0); top: var(--y,0);
+		transform: var(--transform);
+
+		opacity: 0; visibility: hidden;
+		
+		animation-duration: 0.3s;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+
+		z-index: 2;
+
+		background: var(--white);
+	}
+}

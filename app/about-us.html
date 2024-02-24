@@ -1,0 +1,111 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main add-padding-bottom">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">Про нас</span>
+			</div>
+			<h1 class="hero__title">
+				pompidou
+			</h1>
+			<div class="hero__footer is-sticky is-light visible-on-desktop">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row is-mode-2">
+						<div class="hero__footer_col">
+							<span>Преміальний магазин італійського взуття та одягу</span>
+						</div>
+						<div class="hero__footer_col">
+							<i>Офіційний представник брендів</i>
+							<span>(050) 212-71-37</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="page_section container">
+			<div class="page_section__aside">
+				<div class="page_section__nav">
+					<button class="page_section__nav_target visible-on-mob" aria-label="Про нас">
+						<span>Про нас</span>
+					</button>
+					@@include("html/_page-nav.html", {
+						"link_1": "is-current",
+						"link_2": "",
+						"link_3": "",
+						"link_4": "",
+						"link_5": "",
+						"link_6": "",
+					})
+				</div>
+			</div>
+			<div class="page_section__main">
+				<div class="page_section__content">
+					<h2>Pompidoe — найбільший український дистриб’ютор люксових брендів</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>
+								Компанія об’єднує більш ніж 200 всесвітньо відомих марок, а саме: Dolce&Gabbana, Brunello Cucinelli, Stefano Ricci, Off-White, Balmain, David Koma, Balenciaga, Valentino, Peserico, Santoni, Max Mara та багато ін.
+							</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>
+								Наш онлайн-бутік відкриває доступ до унікальної селекції модних предметів гардероба для фанатів моди, які хочуть створювати екстра-стильні образи на кожен день. Тепер купити оригінальні брендові речі можна в декілька кліків.
+							</p>
+							<p>
+								На нашому сайті ви можете купити брендові речі провідних дизайнерів світу. Ми представляємо понад 100 люксових брендів, які диктують тенденції моди і з особливою увагою ставляться до якості. А також прагнуть створити стиль життя, якому світ буде слідувати беззаперечно.
+							</p>
+						</div>
+					</div>
+					<h2>ЛАСКАВО ПРОСИМО ДО НАШОГО МАГАЗИНУ ІТАЛІЙСЬКИХ БРЕНДІВ У львові</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>
+								— Магазин «Шик» м. Львів,
+								вул, Саксаганського 18
+							</p>
+							<p>
+								— Працюємо щодня з 10:00 до 20:00
+							</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>
+								Це чудове місце, де представлені такі бренди як Emporio Armani, Versace Jeans Couture, Furla, Fabi, Love Moschino, Henderson, Pertini, Vic Matie, Iceberg, Loriblu.
+							</p>
+							<p>
+								На вас чекають нові колекції взуття та аксесуарів з Італії. Також є можливість приміряти та забрати своє замовлення у будь-який зручний для вас час.
+							</p>
+						</div>
+					</div>
+				</div>
+				<ul class="page_section__gallery">
+					<li class="is-landscape-mode">
+						<picture>
+							<source srcset="img/about-us/about-us-image-1.avif" type="image/avif">
+							<source srcset="img/about-us/about-us-image-1.webp" type="image/webp">
+							<img src="img/about-us/about-us-image-1.jpg" alt="" width="1000" height="580" loading="lazy">
+						</picture>
+					</li>
+					<li>
+						<picture>
+							<source srcset="img/about-us/about-us-image-2.avif" type="image/avif">
+							<source srcset="img/about-us/about-us-image-2.webp" type="image/webp">
+							<img src="img/about-us/about-us-image-2.jpg" alt="" width="490" height="580" loading="lazy">
+						</picture>
+					</li>
+					<li>
+						<picture>
+							<source srcset="img/about-us/about-us-image-3.avif" type="image/avif">
+							<source srcset="img/about-us/about-us-image-3.webp" type="image/webp">
+							<img src="img/about-us/about-us-image-3.jpg" alt="" width="490" height="580" loading="lazy">
+						</picture>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+
+@@include("html/_footer.html")

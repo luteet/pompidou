@@ -1,0 +1,267 @@
+.page_section {
+
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 2.5rem;
+
+	@include _992 {
+		grid-template-columns: 19rem auto;
+		gap: 3.5rem;
+	}
+
+	// .page_section__aside
+
+	&__aside {
+		@include _992 {
+			padding-top: 4rem;
+		}
+	}
+
+	// .page_section__nav
+
+	&__nav {
+		position: relative;
+	}
+
+	// .page_section__nav_target
+
+	&__nav_target {
+		position: relative;
+
+		padding: 1.25rem;
+
+		text-align: center;
+		font-weight: 300;
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0; top: 50%;
+				transform: translate(150%,-50%);
+				border-left: 0.25rem solid transparent;
+				border-right: 0.25rem solid transparent;
+				border-top: 0.3125rem solid var(--secondary);
+			}
+		}
+
+		width: 100%;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: transparent;
+
+		@include _992 {
+			&::before {
+				display: none;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%; top: 0;
+			width: 100vw; height: 100%;
+			transform: translate(-50%,0);
+			border-top: 1px solid #D0D0D0;
+			border-bottom: 1px solid #D0D0D0;
+			pointer-events: none;
+		}
+	}
+
+	&__nav_target.is-active span::after {
+		transform: translate(150%,-50%) scaleY(-1);
+	}
+
+	&__nav_target.is-active + &__nav_list {
+		opacity: 1; visibility: visible;
+	}
+
+	// .page_section__nav_list
+
+	&__nav_list {
+
+		position: absolute;
+		left: 0; top: 100%;
+		background: var(--white);
+		width: 100%;
+
+		opacity: 0; visibility: hidden;
+		transition: opacity .3s ease, visibility .3s ease;
+		z-index: 2;
+
+		@include _992 {
+			position: static;
+			background: transparent;
+
+			opacity: 1; visibility: visible;
+		}
+
+		border-bottom: 0.0625rem solid #D0D0D0;
+
+		a {
+
+			@include _992 {
+				border-top: 0.0625rem solid #D0D0D0;
+				padding: 2rem 0;
+
+				font-size: 1.125rem;
+				letter-spacing: 0.28em;
+				text-transform: uppercase;
+				font-family: var(--title-font);
+				font-weight: 700;
+
+				display: block;
+			}
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			padding: 1.25rem 0;
+
+			font-size: 1rem;
+			line-height: 1;
+			letter-spacing: 0.04em;
+			color: var(--secondary);
+
+			span {
+				transition: opacity .2s ease;
+			}
+
+			@media (any-hover: hover) {
+
+				&:hover span {
+					opacity: .5;
+				}
+			
+				&:active span {
+					opacity: .7;
+				}
+			}
+
+			&.is-current span {
+				text-decoration: underline;
+				text-underline-offset: 0.3125rem;
+			}
+		}
+	}
+
+	// .page_section__main
+
+	&__main {
+		//padding-top: 2px;
+		@include _992 {
+			padding-top: 4rem;
+		}
+	}
+
+	// .page_section__content
+
+	&__content {
+		h2 {
+			&:not(:first-child) {
+				padding-top: 2.5rem;
+				@include _992 {
+					padding-top: 6.25rem;
+				}
+			}
+
+			font-size: 1.875rem;
+			line-height: 1;
+			text-transform: uppercase;
+			font-family: var(--title-font);
+			letter-spacing: 0.12em;
+
+			@include _992 {
+				font-size: 3.125rem;
+			}
+		}
+
+		p {
+			font-weight: 300;
+			letter-spacing: -0.04em;
+			line-height: 150%;
+
+			&:not(:first-child) {
+				padding-top: 1rem;
+			}
+		}
+	}
+
+	// .page_section__row
+
+	&__row {
+		padding-top: 2rem;
+
+		display: grid;
+		gap: 2rem;
+
+		@include _992 {
+			padding-top: 4rem;
+
+			grid-template-columns: 1fr 2fr;
+			gap: 2.5rem;
+		}
+
+	}
+
+	// .page_section__row_col
+
+	&__row_col {
+		&:nth-child(odd) {
+			@include _992 {
+				font-size: 1.5rem;
+			}
+
+			font-size: 1.25rem;
+			letter-spacing: -0.04em;
+			line-height: 140%;
+			
+		}
+	}
+
+	// .page_section__gallery
+
+	&__gallery {
+		padding-top: 2rem;
+
+		display: grid;
+		gap: 1.25rem;
+
+		@include _768 {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include _992 {
+			padding-top: 4rem;
+		}
+
+		img {
+			width: 100%; height: auto;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+
+			@include _768 {
+				aspect-ratio: 490/580;
+			}
+		}
+
+		li.is-landscape-mode {
+			@include _768 {
+				grid-column: 2 span;
+
+				img {
+					aspect-ratio: 1000/580;
+				}
+			}
+			
+		}
+	}
+}

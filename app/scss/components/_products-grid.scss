@@ -1,0 +1,42 @@
+.products {
+
+	margin-top: 2.5rem;
+
+	@include _992 {
+		padding-bottom: 1.25rem;
+	}
+
+	// .products__list
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		gap: 2rem 0.4375rem;
+
+		@include _550 {
+			grid-template-columns: repeat(3,1fr);
+			gap: 2rem 1rem;
+		}
+
+		@include _992 {
+			grid-template-columns: repeat(4,1fr);
+			gap: 2.5rem 1.25rem;
+		}
+	}
+
+	// .products__footer
+
+	&__footer {
+		margin-top: 2rem;
+
+		display: flex;
+		justify-content: center;
+	}
+
+	// .products__load_more
+
+	&__load_more {
+		max-width: 16.25rem;
+		width: 100%;
+	}
+}

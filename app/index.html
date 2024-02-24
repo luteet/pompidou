@@ -1,0 +1,428 @@
+@@include("html/_header.html", {
+	"banner": '<div class="banner container visible-on-desktop">При купівлі 2 речей — знижка 50%. Встигніть на розпродаж!</div>'
+})
+
+	<main class="main">
+		<section class="index_hero is-disable-container" data-aos="fade-in">
+			<h1 class="index_hero__main_title visually-hidden">pompidou</h1>
+			<ul class="index_hero__nav">
+				<li class="index_hero__nav_item">
+					<picture>
+						<source srcset="img/index/hero/index-hero-image-1.avif" type="image/avif">
+						<source srcset="img/index/hero/index-hero-image-1.webp" type="image/webp">
+						<img src="img/index/hero/index-hero-image-1.jpg" alt="" width="790" height="972" loading="lazy">
+					</picture>
+					<h2 class="index_hero__nav_name">
+						для неї
+					</h2>
+					<div class="index_hero__nav_block">
+						<div>
+							<ul class="index_hero__nav_list">
+								<li>
+									<a href="#">
+										взуття
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										одяг
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										трикотаж
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Верхній одяг
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										сумки
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										аксесуари
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										колекції
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="index_hero__nav_item">
+					<picture>
+						<source srcset="img/index/hero/index-hero-image-2.avif" type="image/avif">
+						<source srcset="img/index/hero/index-hero-image-2.webp" type="image/webp">
+						<img src="img/index/hero/index-hero-image-2.jpg" alt="" width="790" height="972" loading="lazy">
+					</picture>
+					<h2 class="index_hero__nav_name">
+						для нього
+					</h2>
+					<div class="index_hero__nav_block">
+						<div>
+							<ul class="index_hero__nav_list">
+								<li>
+									<a href="#">
+										взуття
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										одяг
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										трикотаж
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										Верхній одяг
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										сумки
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										аксесуари
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										колекції
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="carousel">
+			<h2 class="visually-hidden">
+				бестселери
+			</h2>
+			<div aria-hidden="true" class="carousel__title section_title visible-on-mob">
+				бестселери
+			</div>
+			<div class="carousel__header is-disable-border" data-aos="fade-in" data-aos-delay="200" data-aos-anchor=".carousel">
+				<ul class="carousel__tab_nav">
+					<li>
+						<a href="#slider-for-her" class="is-active">
+							Для неї
+						</a>
+					</li>
+					<li>
+						<a href="#slider-for-him">
+							Для нього
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="carousel__more" aria-label="Дивитися всі">
+					<span class="visible-on-desktop" aria-hidden="true">Дивитися всі</span>
+					<span class="visible-on-mob" aria-hidden="true">Всі</span>
+				</a>
+			</div>
+			<div aria-hidden="true" class="carousel__title section_title visible-on-desktop" data-aos="fade-in" data-aos-delay="300" data-aos-anchor=".carousel">
+				бестселери
+			</div>
+			<div class="carousel__wrapper" data-aos="fade-in" data-aos-delay="400" data-aos-anchor=".carousel">
+				<div class="carousel__wrapper_block is-active" id="slider-for-her">
+					<div class="carousel__slider splide">
+						<div class="carousel__slider_track splide__track">
+							<ul class="carousel__slider_list splide__list">
+								@@loop("html/_carousel-slide.html", [
+									{
+										"image": "1",
+									},
+									{
+										"image": "2",
+									},
+									{
+										"image": "3",
+									},
+									{
+										"image": "4",
+									},
+									{
+										"image": "5",
+									},
+									{
+										"image": "6",
+									},
+									{
+										"image": "7",
+									},
+									{
+										"image": "8",
+									},
+									{
+										"image": "9",
+									},
+								])
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="carousel__wrapper_block" id="slider-for-him">
+					<div class="carousel__slider splide">
+						<div class="carousel__slider_track splide__track">
+							<ul class="carousel__slider_list splide__list">
+								@@loop("html/_carousel-slide.html", [
+									{
+										"image": "10",
+									},
+									{
+										"image": "11",
+									},
+									{
+										"image": "12",
+									},
+									{
+										"image": "13",
+									},
+									{
+										"image": "14",
+									},
+									{
+										"image": "15",
+									},
+									{
+										"image": "16",
+									},
+									{
+										"image": "17",
+									},
+									{
+										"image": "18",
+									},
+								])
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="large_categories is-disable-container">
+			<h2 class="large_categories__title visually-hidden">Категорії</h2>
+			<div class="large_categories__list" data-aos="fade-in" data-aos-delay="200">
+				<a href="#" class="large_categories__card" aria-label="Светри">
+					<div class="large_categories__card_image">
+						<picture>
+							<source srcset="img/nav/nav-image-3.avif" type="image/avif">
+							<source srcset="img/nav/nav-image-3.webp" type="image/webp">
+							<img src="img/nav/nav-image-3.jpg" alt="" width="720" height="720" loading="lazy">
+						</picture>
+					</div>
+					<span>Светри</span>
+				</a>
+				<a href="#" class="large_categories__card" aria-label="Пальто">
+					<div class="large_categories__card_image">
+						<picture>
+							<source srcset="img/nav/nav-image-1.avif" type="image/avif">
+							<source srcset="img/nav/nav-image-1.webp" type="image/webp">
+							<img src="img/nav/nav-image-1.jpg" alt="" width="720" height="720" loading="lazy">
+						</picture>
+					</div>
+					<span>Пальто</span>
+				</a>
+			</div>
+		</section>
+		<section class="attention">
+			<h2 class="visually-hidden">Зверніть увагу</h2>
+			<div class="attention__title section_name visible-on-desktop" data-aos="fade-in" data-aos-delay="200" data-aos-anchor=".attention__product" aria-hidden="true">Зверніть увагу</div>
+			<div class="attention__product" data-aos="fade-in" data-aos-delay="400" data-aos-anchor=".attention__product">
+				<h3 class="attention__product_title">Товар дня</h3>
+				<h4 class="attention__product_name" aria-label="Рюкзак Liu Jo">
+					<a href="#">
+						Рюкзак Liu Jo
+					</a>
+				</h4>
+				<div class="attention__product_image">
+					<picture>
+						<source srcset="img/index/attention/attention-image.avif" type="image/avif">
+						<source srcset="img/index/attention/attention-image.webp" type="image/webp">
+						<img src="img/index/attention/attention-image.jpg" alt="" width="632" height="736" class="image-aspect-ratio" loading="lazy">
+					</picture>
+				</div>
+			</div>
+		</section>
+		<section class="best_brands" data-aos="fade-in" data-aos-delay="200" data-aos-anchor=".best_brands__block">
+			<h2 class="best_brands__title section_title">
+				найкращі італійські бренди
+			</h2>
+			<div class="best_brands__block splide" data-aos="fade-in" data-aos-delay="400" data-aos-anchor=".best_brands__block">
+				<div class="best_brands__track splide__track">
+					<ul class="best_brands__list splide__list">
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-1.svg" alt="" width="107" height="18" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-2.svg" alt="" width="104" height="19" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-3.svg" alt="" width="131" height="15" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-4.svg" alt="" width="76" height="23" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-5.svg" alt="" width="117" height="32" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-1.svg" alt="" width="107" height="18" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-2.svg" alt="" width="104" height="19" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-3.svg" alt="" width="131" height="15" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-4.svg" alt="" width="76" height="23" loading="lazy">
+							</div>
+						</li>
+						<li class="best_brands__logo splide__slide">
+							<div class="best_brands__logo_body">
+								<img src="img/brands/brand-logo-5.svg" alt="" width="117" height="32" loading="lazy">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="programs is-disable-container">
+			<h2 class="visually-hidden">Програми</h2>
+			<ul class="programs__list">
+				<li class="programs__block container" data-aos="fade-in" data-aos-delay="200">
+					<div class="programs__block_background" aria-hidden="true">
+						<picture>
+							<source srcset="img/index/programs/programs-image-1.avif" type="image/avif">
+							<source srcset="img/index/programs/programs-image-1.webp" type="image/webp">
+							<img src="img/index/programs/programs-image-1.jpg" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="programs__block_content" data-aos="fade-in" data-aos-delay="400">
+						<div class="programs__block_content_wrapper">
+							<h3>програма лояльності</h3>
+							<p>Знижка 15%, коли загальна сума ваших покупок перевищує 30 тисяч гривень</p>
+							<a href="#" class="button">
+								детальніше
+							</a>
+						</div>
+					</div>
+				</li>
+				<li class="programs__block container" data-aos="fade-in" data-aos-delay="200">
+					<div class="programs__block_background" aria-hidden="true">
+						<picture>
+							<source srcset="img/index/programs/programs-image-2.avif" type="image/avif">
+							<source srcset="img/index/programs/programs-image-2.webp" type="image/webp">
+							<img src="img/index/programs/programs-image-2.jpg" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<div class="programs__block_content" data-aos="fade-in" data-aos-delay="400">
+						<div class="programs__block_content_wrapper">
+							<h3>фірмовий магазин</h3>
+							<p>На вас чекають нові колекції оригінального взуття, одягу та аксесуарів з Італії</p>
+							<a href="#" class="button">
+								детальніше
+							</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		@@include("html/_sale-section.html")
+		<section class="blog">
+			<h2 class="visually-hidden">Блог</h2>
+			<ul class="blog__grid">
+				<li class="blog__card" data-aos="fade-in" data-aos-delay="200">
+					<a href="#" class="blog__card_body">	
+						<div class="blog__card_thumbnail" aria-hidden="true">
+							<picture>
+								<source srcset="img/blog/blog-thumbnail-1.avif" type="image/avif">
+								<source srcset="img/blog/blog-thumbnail-1.webp" type="image/webp">
+								<img src="img/blog/blog-thumbnail-1.jpg" alt="" width="0" height="0" loading="lazy">
+							</picture>
+						</div>
+						<h3 class="blog__card_name section_title is-min">
+							<a href="#">чорна п'ятниця розпочалась</a>
+						</h3>
+						<div class="blog__card_info">
+							<time datetime="27.11.2023">27.11.2023</time>
+							<span>Brands</span>
+						</div>
+					</a>
+				</li>
+				<li class="blog__card" data-aos="fade-in" data-aos-delay="200">
+					<div class="blog__card_thumbnail" aria-hidden="true">
+						<picture>
+							<source srcset="img/blog/blog-thumbnail-2.avif" type="image/avif">
+							<source srcset="img/blog/blog-thumbnail-2.webp" type="image/webp">
+							<img src="img/blog/blog-thumbnail-2.jpg" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<h3 class="blog__card_name section_title is-min">
+						<a href="#">гід по взуттю і стилю на 2024 рік</a>
+					</h3>
+					<div class="blog__card_info">
+						<time datetime="25.11.2023">25.11.2023</time>
+						<span>Brands</span>
+					</div>
+				</li>
+				<li class="blog__card" data-aos="fade-in" data-aos-delay="200">
+					<div class="blog__card_thumbnail" aria-hidden="true">
+						<picture>
+							<source srcset="img/blog/blog-thumbnail-3.avif" type="image/avif">
+							<source srcset="img/blog/blog-thumbnail-3.webp" type="image/webp">
+							<img src="img/blog/blog-thumbnail-3.jpg" alt="" width="0" height="0" loading="lazy">
+						</picture>
+					</div>
+					<h3 class="blog__card_name section_title is-min">
+						<a href="#">стильні подарунки на новий рік</a>
+					</h3>
+					<div class="blog__card_info">
+						<time datetime="20.11.2023">20.11.2023</time>
+						<span>Brands</span>
+					</div>
+				</li>
+			</ul>
+			<div class="blog__footer" data-aos="fade-in" data-aos-delay="200">
+				<a href="blog.html" class="blog__button button is-transparent">
+					всі новини
+				</a>
+			</div>
+		</section>
+		@@include("html/_seo-text.html")
+	</main>
+
+@@include("html/_footer.html")

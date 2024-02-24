@@ -1,0 +1,153 @@
+
+[class^="jsr"] {
+	box-sizing: border-box;
+}
+
+.jsr {
+	display: block;
+
+	position: relative;
+
+	padding-top: 0.625rem;
+
+	width: 100%;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+
+
+}
+
+.jsr.is-disabled {
+	background: grey;
+}
+
+.jsr_rail {
+	height: 0.3125rem;
+	background: #EFEFEF;
+}
+
+.jsr_slider {
+	position: absolute;
+	top: calc(0.3125rem / 2 + 0.625rem);
+	left: 0;
+
+	transform: translate(-50%, -50%);
+
+	width: 1.5625rem;
+	height: 1.5625rem;
+
+	cursor: col-resize;
+	//background: var(--secondary);
+	background: transparent;
+	border-radius: 50%;
+
+	outline: 0;
+
+	z-index: 3;
+}
+
+.jsr_slider:focus {
+	z-index: 4;
+}
+
+/* .jsr_slider::before {
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--white);
+	border: 1px solid var(--secondary);
+	border-radius: 50%;
+} */
+
+.jsr_slider::after {
+	content: '';
+	width: 0.9375rem;
+	height: 0.9375rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	background: var(--secondary);
+	border-radius: 50%;
+}
+
+.jsr_label {
+	position: absolute;
+	top: calc(0.625rem + 0.3125rem + 0.9375rem / 1.5);
+	transform: translateX(-50%);
+	padding: 0.2em 0.4em;
+	background: var(--white);
+	color: var(--text-color);
+	font-size: 1.125rem;
+	white-space: nowrap;
+	z-index: 2;
+	cursor: col-resize;
+	opacity: 1;
+}
+
+.jsr_label.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.jsr_bar {
+	position: absolute;
+	height: 0.3125rem;
+	background: var(--secondary);
+	z-index: 2;
+	cursor: move;
+	top: 10px;
+}
+
+.jsr_limit {
+	position: absolute;
+	z-index: 1;
+	pointer-events: none;
+	height: 0.3125rem;
+	top: 0.625rem;
+	background-color: #EFEFEF;
+}
+
+.jsr_grid {
+	margin-top: 0.3125rem;
+	width: 100%;
+}
+
+.jsr_lockscreen {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.range {
+
+	// .range__header
+
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+
+	// .range__input_item
+
+	&__input_item {
+		input {
+			width: 4.375rem;
+		}
+	}
+
+	// .range__element
+
+	&__element {
+	}
+}

@@ -1,0 +1,108 @@
+.single {
+
+	padding-top: 2.5rem;
+
+	@include _992 {
+		padding-top: 5rem;
+	}
+
+	&__body {
+		max-width: 43.75rem;
+		margin: 0 auto;
+
+		font-size: 1rem;
+
+		@include _550 {
+			font-size: 1.25rem;
+		}
+
+		line-height: 140%;
+		letter-spacing: -0.04em;
+		font-weight: 300;
+
+		@include _992 {
+			font-size: 1.5rem;
+		}
+	}
+
+	h2 {
+		font-family: var(--title-font);
+		font-size: 1.875rem;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		@include _550 {
+			font-size: 3.125rem;
+			padding-bottom: 1rem;
+		}
+
+		padding-bottom: 0.5rem;
+
+		&:not(:first-child) {
+			padding-top: 2.5rem;
+			@include _992 {
+				padding-top: 5rem;
+			}
+		}
+	}
+
+	h3 {
+		font-family: var(--title-font);
+		font-size: 1.5625rem;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		@include _550 {
+			font-size: 1.875rem;
+			padding-bottom: 1rem;
+		}
+
+		padding-bottom: 0.5rem;
+		&:not(:first-child) {
+			padding-top: 2rem;
+			@include _992 {
+				padding-top: 3rem;
+			}
+		}
+	}
+
+	p {
+
+		&:not(:first-child) {
+			padding-top: 1rem;
+		}
+	}
+
+	ul, ul li {
+		list-style-type: disc;
+	}
+
+	li:not(:first-child) {
+		padding-top: 0.75rem;
+	}
+
+	ul, ol {
+		padding-left: 1.5rem; padding-top: 1rem;
+		
+		@include _550 {
+			padding-left: 2rem;
+		}
+
+		@include _992 {
+			padding-left: 2.5rem;
+		}
+	}
+
+	img {
+		margin-top: 2.5rem;
+		@include _992 {
+			margin-top: 4rem;
+		}
+	}
+}
+
+@import "similar-articles";

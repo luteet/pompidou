@@ -1,0 +1,147 @@
+.one_click {
+
+	// .one_click__wrapper
+
+	&__wrapper {
+	}
+
+	// .one_click__bg
+
+	&__bg {
+	}
+
+	// .one_click__body
+
+	&__body {
+		padding: 2.5rem 0.5rem;
+
+		@include _550 {
+			padding: 2.5rem;
+		}
+
+		background: var(--white);
+
+		max-width: 29rem;
+	}
+
+	// .one_click__close_btn
+
+	&__close_btn {
+		right: 0.3125rem; top: 0.3125rem;
+		svg {
+			width: 2rem; height: 2rem;
+		}
+	}
+
+	// .one_click__container
+
+	&__container {
+		padding: 0 0.75rem;
+		
+	}
+
+	// .one_click__title
+
+	&__title {
+		font-family: var(--title-font);
+		font-size: 3.125rem;
+		letter-spacing: 0.12em;
+		color: var(--secondary);
+		line-height: 1;
+		text-transform: uppercase;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	// .one_click__text
+
+	&__text {
+		padding-top: 1.5rem;
+		line-height: 140%;
+		letter-spacing: -0.04em;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	&__text + .button {
+		width: 100%;
+		margin-top: 1.25rem;
+		@include _550 {
+			margin-top: 2.5rem;
+		}
+	}
+
+	// .one_click__form
+
+	&__form {
+		padding-top: 1.25rem;
+
+		display: flex;
+		flex-direction: column;
+		@include _550 {
+			gap: 1.75rem 0;
+			padding-top: 1.75rem;
+		}
+
+		.button {
+			margin-top: 1.25rem;
+			@include _550 {
+				margin-top: 0;
+			}
+		}
+
+		label {
+			display: block;
+			margin: 1.25rem 0 0.75rem 0;
+
+			font-family: var(--title-font);
+			font-size: 1.125rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.28em;
+
+			@include _550 {
+				position: absolute;
+				width: 1px; height: 1px;
+				margin: -1px; padding: 0;
+				border: 0;
+				
+				white-space: nowrap;
+				clip-path: inset(100%);
+				clip: rect(0 0 0 0);
+				overflow: hidden;
+			}
+		}
+
+		input {
+			padding: 0.75rem;
+			letter-spacing: -0.04em;
+			
+			background: #F2F2F2;
+
+			@include _550 {
+				padding: 0.75rem 0;
+				border-bottom: 1px solid #E7E7E7;
+
+				background: transparent;
+			}
+
+			@media (any-hover: hover) {
+
+				transition: border-color .3s ease;
+
+				&:hover {
+					border-color: var(--secondary-hover);
+				}
+			
+				&:active {
+					border-color: var(--secondary-active);
+				}
+			}
+
+			&::placeholder {
+				color: #808080;
+			}
+		}
+	}
+}

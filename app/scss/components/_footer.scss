@@ -1,0 +1,279 @@
+.footer {
+
+	flex: 0 0 auto;
+
+	@include _768 {
+		display: grid;
+		grid-template-columns: 100%;
+	}
+
+	@include _992 {
+		grid-template-columns: 1.8fr 1.25fr 1.3fr 0.8fr;
+		padding-top: 4.5rem;
+	}
+
+	background: var(--secondary);
+
+	padding-top: 2.5rem;
+
+	// .footer__block
+
+	&__block {
+		justify-self: center;
+		@include _992 {
+			justify-self: stretch;
+		}
+	}
+
+	// .footer__block_title
+
+	&__block_title {
+		padding-bottom: 1.25rem;
+		@include _992 {
+			padding-bottom: 2.25rem;
+		}
+
+		font-family: var(--title-font);
+		color: #808080;
+		font-size: 1.875rem;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.3rem;
+	}
+
+	// .footer__subscribe
+
+	&__subscribe {
+		display: flex;
+		flex-direction: column;
+
+		max-width: 21.25rem;
+	}
+
+	// .footer__subscribe_input
+
+	&__subscribe_input {
+		padding: 0.75rem 0;
+		background: transparent;
+		color: var(--white);
+
+		&::placeholder {
+			color: #808080;
+		}
+
+		border-bottom: 1px solid #808080;
+	}
+
+	// .footer__subscribe_submit
+
+	&__subscribe_submit {
+		margin-top: 1.25rem;
+
+		padding: 0.72rem 0.9375rem;
+		
+		background: transparent;
+
+		color: var(--white);
+		text-transform: uppercase;
+		font-weight: 700;
+		line-height: 1;
+		
+		border: 0.0625rem solid var(--white);
+
+		@media (any-hover: hover) {
+
+			transition: background .2s ease, color .2s ease;
+			
+			&:hover {
+				background: var(--white);
+				color: var(--secondary);
+			}
+		
+			&:active {
+				background: var(--light);
+				color: var(--secondary);
+			}
+		}
+	}
+
+	// .footer__social
+
+	&__social {
+		padding-top: 2.5rem;
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 3rem; height: 3rem;
+			border-radius: 50%;
+
+			border: 0.0625rem solid var(--white);
+			color: var(--white);
+
+			@media (any-hover: hover) {
+
+				transition: background .2s ease, color .2s ease;
+				
+				&:hover {
+					background: var(--white);
+					color: var(--secondary);
+				}
+			
+				&:active {
+					background: var(--light);
+					color: var(--secondary);
+				}
+			}
+		}
+	}
+
+	// .footer__nav
+
+	&__nav {
+		//margin-top: -0.75rem;
+		a {
+			color: var(--white);
+
+			display: block;
+			line-height: 1;
+			padding: 0.35rem 0;
+		}
+	}
+
+	// .footer__contacts
+
+	&__contacts {
+		//margin-top: -1rem;
+		a {
+			color: var(--white);
+			font-weight: 300;
+
+			display: block;
+			line-height: 1;
+			padding: 0.5rem 0;
+		}
+	}
+
+	// .footer__row
+
+	&__row {
+		padding-top: 1.5rem;
+
+		@include _768 {
+			padding-top: 4.65rem;
+
+			display: grid;
+			grid-template-columns: auto 12.5rem;
+		}
+
+		@include _992 {
+			grid-column: 4 span;
+			grid-template-columns: 15rem auto 12.5rem;
+		}
+
+		padding-bottom: 1.5rem;
+
+		
+	}
+
+	// .footer__privacy
+
+	&__privacy {
+
+		@include _992 {
+			grid-column: 2; grid-row: 1;
+
+			gap: 1.25rem 5rem;
+
+			padding: 0; border-top: 0;
+
+			flex-direction: row;
+		}
+
+		padding: 2.5rem 0;
+
+		grid-column: 1; grid-row: 1;
+
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+		gap: 0.75rem 2.5rem;
+
+		border-top: 0.0625rem solid #404040;
+
+		a {
+			color: #808080;
+			letter-spacing: -0.04rem;
+		}
+	}
+
+	// .footer__payment_methods
+
+	&__payment_methods {
+
+		grid-column: 2; grid-row: 1;
+		
+		@include _992 {
+			grid-column: 3; grid-row: 1;
+		}
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+
+		padding: 1.5rem 0;
+		border-top: 0.0625rem solid #404040;
+		
+		@include _768 {
+			padding: 0; 
+			border-top: 0;
+
+			justify-content: flex-end;
+		}
+
+		gap: 2rem;
+
+		img {
+			width: 4.375rem; height: 2rem;
+			object-fit: contain;
+		}
+	}
+
+	// .footer__copyright
+
+	&__copyright {
+
+		border-top: 0.0625rem solid #404040;
+
+		grid-column: 2 span; grid-row: 2;
+		justify-self: center;
+		text-align: center;
+
+		padding-top: 2.5rem;
+		
+		@include _992 {
+			border-top: 0;
+
+			grid-column: 1; grid-row: 1;
+
+			justify-self: stretch;
+			text-align: start;
+
+			padding-top: 0;
+
+			color: #808080;
+		}
+
+		color: var(--white);
+		letter-spacing: -0.04rem;
+	}
+}

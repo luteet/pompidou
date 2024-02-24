@@ -1,0 +1,77 @@
+@@include("html/_header.html", {
+	"banner": "",
+})
+
+	<main class="main add-padding-bottom">
+		<section class="hero">
+			<div class="breadcrumbs">
+				<a href="index.html" class="breadcrumbs__link">Головна</a>
+				<span class="breadcrumbs__separator">/</span>
+				<span class="breadcrumbs__current">Повернення та обмін</span>
+			</div>
+			<h1 class="hero__title">
+				Повернення та обмін
+			</h1>
+			<div class="hero__footer is-sticky is-light visible-on-desktop">
+				<div class="hero__footer_wrapper">
+					<div class="hero__footer_row is-mode-2">
+						<div class="hero__footer_col">
+							<span>Преміальний магазин італійського взуття та одягу</span>
+						</div>
+						<div class="hero__footer_col">
+							<i>Офіційний представник брендів</i>
+							<span>(050) 212-71-37</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="page_section container">
+			<div class="page_section__aside">
+				<div class="page_section__nav">
+					<button class="page_section__nav_target visible-on-mob" aria-label="Повернення та обмін">
+						<span>Повернення та обмін</span>
+					</button>
+					@@include("html/_page-nav.html", {
+						"link_1": "",
+						"link_2": "",
+						"link_3": "is-current",
+						"link_4": "",
+						"link_5": "",
+						"link_6": "",
+					})
+				</div>
+			</div>
+			<div class="page_section__main">
+				<div class="page_section__content">
+					<h2>У разі необхідності, ви можете обміняти або повернути придбаний товар протягом 14-ти днів з моменту покупки</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>—  Зберігайте чек</p>
+							<p>—  Зберігайте товарний вид</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>Ви можете повернути або обміняти товар належної якості протягом 14 календарних днів після його покупки.</p>
+							<p>Поверненню підлягає товар, що зберіг свій первісний вигляд, фабричні ярлики, пломби та оригінальну упаковку.</p>
+						</div>
+					</div>
+					<h2>Способи оплати</h2>
+					<div class="page_section__row">
+						<div class="page_section__row_col">
+							<p>—  Купальники</p>
+							<p>—  Спідня білизна</p>
+							<p>—  Парфумерія</p>
+							<p>—  Аксесуари</p>
+							<p>—  Панчішно-шкарпеткові вир.</p>
+						</div>
+						<div class="page_section__row_col">
+							<p>Повернення грошей здійснюється тим же способом, яким ви оплатили замовлення.</p>
+							<p>У разі оплати карткою, терміни зарахування грошових коштів можуть зайняти до 14-і банківських днів.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+@@include("html/_footer.html")

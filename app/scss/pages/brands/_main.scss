@@ -1,0 +1,64 @@
+.brands {
+
+	padding-top: 1.25rem;
+
+	@include _550 {
+		padding-top: 2.5rem;
+	}
+
+	// .brands__list
+
+	&__list {
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include _550 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 2.5rem 2rem;
+		}
+
+		
+	}
+
+	// .brands__logo
+
+	&__logo {
+
+		@media (max-width: 551px) {
+			&:nth-child(odd) {
+				border-right: 0.0625rem solid #D0D0D0;
+			}
+
+			&:not(:nth-child(1), :nth-child(2)) {
+				border-top: 0.0625rem solid #D0D0D0;
+			}
+
+			&:nth-child(even):nth-last-child(2) {
+				border-bottom: 0.0625rem solid #D0D0D0;
+			}
+		}
+		
+		@include _550 {
+			height: 5rem;
+		}
+
+		@include _992 {
+			flex: 0 1 14%;
+		}
+
+		flex: 0 1 17%;
+		height: 6rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			width: 7.3125rem; height: 2rem;
+			object-fit: contain;
+		}
+	}
+}
