@@ -116,6 +116,10 @@ section {
 	&.is-disable-gap {
 		padding-bottom: 0;
 	}
+
+	&[data-aos^=fade][data-aos^=fade].aos-animate {
+		transform: none;
+	}
 }
 
 section:not(.is-disable-container), .footer {
@@ -148,6 +152,14 @@ section:not(.is-disable-container), .footer {
 	line-height: 1;
 	text-transform: uppercase;
 	font-weight: 700;
+
+	&.is-buy-mode span:first-child {
+		&::after {
+			content: '●';
+			font-family: serif;
+			margin: 0 0.5rem 0 0.7rem;
+		}
+	}
 
 	&.is-transparent {
 		background: transparent;

@@ -60,6 +60,18 @@
 	&__footer {		
 	}
 
+	&__footer.is-active-sticky .is-hidden-on-sticky {
+		display: none;
+	}
+
+	/* &__footer.is-active-sticky .is-buy-mode {
+		margin-top: 2.5rem;
+	} */
+
+	&__footer:not(.is-active-sticky) .is-visible-on-sticky {
+		display: none;
+	}
+
 	@include _992 {
 		&__footer.is-active-sticky &__footer_wrapper {
 			position: fixed;
@@ -172,13 +184,16 @@
 	}
 
 	&__footer_row.is-mode-1 &__footer_col {
+
+		align-items: center;
+
 		&:first-child {
-			padding: 0 2rem 1rem 0;
+			padding: 2.75rem 2rem 1rem 0;
 			justify-content: space-between;
 		}
 
 		&:last-child {
-			padding: 0 0 1rem 2rem;
+			padding: 2.75rem 0 1rem 2rem;
 		}
 	}
 

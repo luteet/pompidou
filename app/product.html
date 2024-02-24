@@ -2,7 +2,7 @@
 	"banner": "",
 })
 
-	<main class="main add-padding-bottom">
+	<main class="main add-padding-bottom" data-aos="fade-in" data-aos-delay="100">
 		<section class="hero">
 			<div class="breadcrumbs">
 				<a href="index.html" class="breadcrumbs__link">Головна</a>
@@ -67,19 +67,33 @@
 						</div>
 						<div class="hero__footer_col visible-on-desktop">
 							<div class="product_code">Код товару: 1G17XG A00N/F47</div>
-							<ul class="product_info">
+							<ul class="product_info is-hidden-on-sticky">
 								<li>
 									<span>Бренд: </span>
 									<a href="category.html">Pinko</a>
 								</li>
 							</ul>
+							<div class="product_buy is-visible-on-sticky">
+								<button class="button is-buy-mode" type="button">
+									<span>До кошика</span>
+									<span>6950 ₴</span>
+								</button>
+								<button class="product__favorite">
+									<svg width="20" height="20">
+										<use href="img/sprites.svg#favorite"></use>
+									</svg>
+									<svg width="20" height="20">
+										<use href="img/sprites.svg#favorite-active"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<div class="product container">
-			<div class="product__col">
+			<div class="product__col" data-aos="fade-in" data-aos-delay="200">
 				<div class="product__code visible-on-mob">Код товару: 1G17XG A00N/F47</div>
 				<div class="product__gallery splide">
 					<div class="product__gallery_track splide__track">
@@ -159,7 +173,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="product__col">
+			<div class="product__col" data-aos="fade-in" data-aos-delay="400">
 				<div class="product__grid">
 					<div class="product__price">
 						<del>14 900 ₴</del><ins>6950 ₴</ins>
@@ -196,7 +210,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="product__info">
+				<div class="product__info" data-aos="fade-in" data-aos-delay="100">
 					<h2 class="product__info_title">інформація про товар</h2>
 					<ul class="product__info_list">
 						<li class="product__info_item">
@@ -268,8 +282,14 @@
 					</ul>
 				</div>
 			</div>
+			<div class="product__fixed_panel visible-on-mob">
+				<button class="button is-buy-mode" type="button">
+					<span>До кошика</span>
+					<span>6950 ₴</span>
+				</button>
+			</div>
 		</div>
-		<section class="carousel">
+		<section class="carousel" data-aos="fade-in" data-aos-delay="100">
 			<h2 class="visually-hidden">
 				вам може сподобатись
 			</h2>

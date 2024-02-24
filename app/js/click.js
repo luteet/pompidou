@@ -237,7 +237,7 @@ export default function click(params) {
 
 		const productFavorite = $(".product__favorite");
 		if(productFavorite) {
-			productFavorite.classList.toggle("is-active")
+			document.querySelectorAll(".product__favorite").forEach(button => button.classList.toggle("is-active"))
 		}
 		
 		// =-=-=-=-=-=-=-=-=-=-=-=- </product-info> -=-=-=-=-=-=-=-=-=-=-=-=

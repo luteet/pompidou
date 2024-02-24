@@ -315,4 +315,15 @@ document.querySelectorAll(".index_hero__nav_item").forEach(item => {
 })
 
 
+const productBuy = document.querySelector(".product__buy"), productFixedPanel = document.querySelector(".product__fixed_panel");
+if(productBuy && productFixedPanel) {
+	const cb = function(entries) {
+		entries.forEach(entry => {
+			(entry.isIntersecting) ? productFixedPanel.classList.remove("is-visible") : productFixedPanel.classList.add("is-visible");
+		});
+	}
+	
+	const io = new IntersectionObserver(cb);
+	io.observe(productBuy);
+}
 
