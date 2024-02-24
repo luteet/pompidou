@@ -15,6 +15,7 @@ export default function sliders() {
 
 			autoScroll: {
 				speed: 1,
+				pauseOnHover: true,
 			},
 
 			intersection: {

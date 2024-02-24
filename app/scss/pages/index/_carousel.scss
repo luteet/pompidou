@@ -201,12 +201,13 @@
 
 		&.is-active {
 			opacity: 1; visibility: visible;
+			z-index: 2;
 		}
 	}
 
 	&__wrapper_block.is-active &__slider {
 		&.splide.is-initialized, &.splide.is-rendered {
-			visibility: visible;
+			visibility: initial;
 		}
 	}
 
@@ -230,8 +231,10 @@
 	&__slider {
 		
 		&.splide.is-initialized, &.splide.is-rendered {
-			visibility: hidden;
+			visibility: initial;
 		}
+
+
 
 		transition: visibility .5s ease;
 

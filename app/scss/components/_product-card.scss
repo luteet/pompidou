@@ -7,12 +7,12 @@
 		text-align: center;
 
 		@media (any-hover: hover) {
-			&:hover img {
-				transform: scale(1.05) translateZ(0.001px);
+			&:hover picture:nth-child(1) img {
+				opacity: 0; visibility: hidden;
 			}
-		
-			&:active img {
-				transform: scale(1.045) translateZ(0.001px);
+
+			&:hover picture:nth-child(2) img {
+				opacity: 1; visibility: visible;
 			}
 		}
 	}
@@ -21,9 +21,24 @@
 
 	&__image {
 		overflow: hidden;
+		display: grid;
+		> * {
+			grid-area: 1/1;
+		}
+
 		img {
 			transform-origin: center top;
-			transition: transform .4s ease;
+			transition: opacity .3s ease, visibility .3s ease;
+		}
+
+		picture {
+			&:nth-child(1) img {
+				opacity: 1; visibility: visible;
+			}
+
+			&:nth-child(2) img {
+				opacity: 0; visibility: hidden;
+			}
 		}
 	}
 
