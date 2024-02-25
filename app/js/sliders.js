@@ -111,6 +111,7 @@ export default function sliders() {
 
 			pagination: false,
 			arrows: false,
+			speed: 700,
 	
 			breakpoints: {
 	

@@ -131,14 +131,15 @@
 		a {
 			position: relative;
 			color: var(--white);
-			text-decoration: underline;
-			text-underline-offset: -0rem;
-			text-decoration-skip-ink: none;
-			text-decoration-color: transparent;
-
-			transition: text-decoration-color .3s ease;
 
 			@media (any-hover: hover) {
+				text-decoration: underline;
+				text-underline-offset: -0rem;
+				text-decoration-skip-ink: none;
+				text-decoration-color: transparent;
+
+				transition: text-decoration-color .3s ease;
+				
 				&:hover {
 					text-decoration-color: var(--white);
 				}
@@ -163,8 +164,9 @@
 			justify-content: flex-end;
 		}
 
-		span, time {
+		span, time, a {
 			font-weight: 300;
+			color: var(--white);
 			@include _992 {
 				opacity: .6;
 			}

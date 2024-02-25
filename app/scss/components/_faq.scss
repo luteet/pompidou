@@ -36,6 +36,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.28em;
 		font-family: var(--title-font);
+		color: var(--secondary);
 
 		&::before, &::after {
 			content: '';

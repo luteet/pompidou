@@ -32,6 +32,7 @@ export default function Popup(arg) {
 					body.classList.add('is-popup-active');
 
 					if (saveID) history.pushState('', "", id);
+					popup.classList.add('is-open');
 
 					setTimeout(() => {
 						if (!initStart) {
@@ -43,7 +44,7 @@ export default function Popup(arg) {
 							popupCheck = true;
 						}
 
-					}, 0)
+					}, 100)
 				}
 
 			} else {
@@ -86,6 +87,7 @@ export default function Popup(arg) {
 					}
 
 					popupCheckClose = true;
+					popup.classList.remove('is-open');
 					popup.style.display = 'none';
 				}
 
@@ -129,10 +131,21 @@ export default function Popup(arg) {
 
 			body.addEventListener('keyup', function (event) {
 
-				if(event.code == 27 && document.querySelector('.popup.is-active')) {
+				if(event.key == "Escape" && document.querySelector('.popup.is-active')) {
 					close(document.querySelector('.popup.is-active'));
 				}
 
+			});
+
+			window.addEventListener('popstate', function(event) {
+				event.preventDefault()
+
+				let currentHash = window.location.hash;
+				if (currentHash === '' && document.body.classList.contains("is-popup-active")) {
+					close(document.querySelector(".popup.is-active"));
+				} else if(currentHash !== '' && !document.body.classList.contains("is-popup-active")) {
+					open(currentHash, false, false);
+				}
 			});
 
 			if (saveID) {

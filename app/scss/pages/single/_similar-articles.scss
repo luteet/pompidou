@@ -22,7 +22,7 @@
 		
 
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto 1fr;
 
 		border-bottom: 0.0625rem solid #D0D0D0;
 
@@ -30,6 +30,7 @@
 
 		@include _992 {
 
+			grid-template-columns: 1fr 1fr;
 			padding: 0;
 
 			&::before {
@@ -118,12 +119,17 @@
 		position: relative;
 
 		display: flex;
-		flex-direction: column-reverse;
-		justify-content: flex-end;
+		flex-direction: column;
+		justify-content: space-between;
 
 		gap: 2rem;
 
-		padding: 2.5rem;
+		padding: 0.75rem 1.25rem 1.25rem;
+		@include _992 {
+			padding: 2.5rem;
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+		}
 	}
 
 	// .similar_articles__card_tumbnail
@@ -159,13 +165,21 @@
 		color: var(--white);
 
 		display: flex;
-		flex-direction: row-reverse;
-		justify-content: flex-end;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@include _992 {
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+		}
 
 		a, span {
-			&::after {
-				content: '/';
-				margin: 0 0.5rem;
+			color: var(--white);
+			@include _992 {
+				&::after {
+					content: '/';
+					margin: 0 0.5rem;
+				}
 			}
 		}
 

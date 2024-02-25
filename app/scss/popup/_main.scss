@@ -24,6 +24,13 @@ body {
 		transition: none;
 	}
 
+	&.is-open {
+		opacity: 0.0001; visibility: visible;
+		&.is-active {
+			opacity: 1; visibility: visible;
+		}
+	}
+
 	&.is-active {
 		opacity: 1; visibility: visible;
 	}

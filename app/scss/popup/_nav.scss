@@ -140,3 +140,145 @@
 		}
 	}
 }
+
+.nav_popup_2 {
+
+	padding: 0;
+
+	// .nav_popup_2__wrapper
+
+	&__wrapper {
+	}
+
+	// .nav_popup_2__bg
+
+	&__bg {
+	}
+
+	// .nav_popup_2__body
+
+	&__body {
+		max-width: 100%;
+		padding: 0;
+		@include _550 {
+			//padding: 4rem calc(var(--container-padding) / 2) 4rem var(--container-padding);
+			padding: 0;
+		}
+
+		height: calc(var(--vh,1vh) * 100);
+		
+	}
+
+	// .nav_popup_2__close-btn
+
+	&__close-btn {
+		color: var(--white);
+		top: 0.75rem; right: 0.75rem;
+		width: 2rem; height: 2rem;
+		z-index: 3;
+		svg {
+			width: 80%; height: 80%;
+		}
+	}
+
+	// .nav_popup_2__container
+
+	&__container {
+		max-height: calc(var(--vh,1vh) * 100);
+		padding: 4rem var(--container-padding);
+	}
+
+	// .nav_popup_2__row
+
+	&__row {
+		display: grid;
+
+		gap: 0 2rem;
+
+		@include _992 {
+			grid-template-columns: 1fr 1fr;
+		}
+		
+	}
+
+	// .nav_popup_2__item
+
+	&__item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		//grid-template-rows: min-content auto auto;
+		gap: 0 2.5rem;
+
+		@include _992 {
+			grid-template-columns: 27.75rem 1fr;
+		}
+	}
+
+	&__item:nth-child(even) {
+		grid-template-columns: 1fr 1fr;
+		@include _992 {
+			grid-template-columns: 1fr 27.75rem;
+		}
+	}
+
+	&__item:nth-child(even) & {
+		&__item_image {
+			grid-column: 2;
+			grid-row: 1/4;
+		}
+	}
+
+	// .nav_popup_2__item_image
+
+	&__item_image {
+		grid-row: 1/4;
+	}
+
+	// .nav_popup_2__item_title
+
+	&__item_title {
+		font-family: var(--title-font);
+		text-transform: uppercase;
+		color: var(--white);
+		font-size: 1.875rem;
+		line-height: 1;
+		letter-spacing: 0.16em;
+
+		padding-top: 3.125rem;
+
+		@include _992 {
+			padding-top: 0;
+		}
+	}
+
+	// .nav_popup_2__item_list
+
+	&__item_list {
+		padding-top: 3rem;
+
+		li {
+			padding: 0.625rem 0;
+		}
+
+		a {
+			display: block;
+			text-transform: uppercase;
+			color: var(--white);
+			font-weight: 700;
+
+			@media (any-hover: hover) {
+
+				transition: opacity .2s ease;
+
+				&:hover {
+					opacity: .8;
+				}
+			
+				&:active {
+					opacity: .6;
+				}
+			}
+		}
+	}
+}
+

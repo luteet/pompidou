@@ -48,7 +48,7 @@ export default function resize(params) {
 			},
 			function () {  // screen < 992px
 	
-				document.querySelectorAll(".nav_popup.is-active").forEach(popupElement => {
+				document.querySelectorAll(".nav_popup.is-active, .nav_popup_2.is-active").forEach(popupElement => {
 					params.popup.close(`#${popupElement.getAttribute("id")}`);
 				})
 	

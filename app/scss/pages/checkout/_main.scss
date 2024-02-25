@@ -346,6 +346,7 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		font-family: var(--title-font);
+		color: var(--secondary);
 
 		text-align: start;
 
@@ -417,6 +418,7 @@
 
 	&__drop_down_close {
 		background: transparent;
+		color: var(--secondary);
 		svg {
 			width: 2rem; height: 2rem;
 		}
