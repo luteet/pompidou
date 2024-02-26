@@ -4,8 +4,8 @@
 	min-height: calc(100svh - var(--height-header, 5.56vw));
 
 	@include _992 {
-		min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
-		min-height: calc(100svh - var(--height-header, 5.56vw));
+		min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw) - var(--height-banner,0px));
+		min-height: calc(100svh - var(--height-header, 5.56vw) - var(--height-banner,0px));
 	}
 
 	display: flex;
@@ -39,6 +39,7 @@
 			/* min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
 			min-height: calc(100svh - var(--height-header, 5.56vw)); */
 			min-height: 100%;
+			padding: 1.5625rem 0;
 		}
 
 		display: flex;

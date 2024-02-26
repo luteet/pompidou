@@ -1,5 +1,7 @@
 export default function resize(params) {
 
+	const banner = document.querySelector(".banner");
+
 	let resizeCheck = {}, windowSize;
 
 	const appendToOnTablet = document.querySelectorAll("[data-append-to]"),
@@ -29,6 +31,8 @@ export default function resize(params) {
 	function resizeFunc() {
 	
 		if(params.header) params.html.style.setProperty("--height-header", params.header.offsetHeight + "px");
+		if(banner) params.html.style.setProperty("--height-banner", banner.offsetHeight + "px");
+
 		params.html.style.setProperty("--vh", Number.parseFloat(window.innerHeight * 0.01).toFixed(2) + "px");
 		if(windowSize != window.innerWidth) {
 			params.html.style.setProperty("--svh", Number.parseFloat(window.innerHeight * 0.01).toFixed(2) + "px");
