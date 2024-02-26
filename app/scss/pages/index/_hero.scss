@@ -38,7 +38,7 @@
 		@include _992 {
 			/* min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
 			min-height: calc(100svh - var(--height-header, 5.56vw)); */
-			min-height: 100%;
+			//min-height: 100%;
 			padding: 1.5625rem 0;
 		}
 
