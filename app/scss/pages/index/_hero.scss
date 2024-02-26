@@ -4,7 +4,8 @@
 	min-height: calc(100svh - var(--height-header, 5.56vw));
 
 	@include _992 {
-		min-height: auto;
+		min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
+		min-height: calc(100svh - var(--height-header, 5.56vw));
 	}
 
 	display: flex;
@@ -22,6 +23,7 @@
 		grid-template-rows: 1fr 1fr;
 
 		width: 100%;
+		min-height: 100%;
 		
 		@include _992 {
 			grid-template-columns: 1fr 1fr;
@@ -34,7 +36,9 @@
 	&__nav_item {
 		position: relative;
 		@include _992 {
-			min-height: 60.75rem;
+			/* min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
+			min-height: calc(100svh - var(--height-header, 5.56vw)); */
+			min-height: 100%;
 		}
 
 		display: flex;

@@ -20,23 +20,23 @@
 						<div class="header__nav_body">
 							<ul class="header__nav_list">
 								<li>
-									<a href="#for-her" class="open-popup">
-										для неї
+									<a href="#for-her" class="open-popup" aria-label="для неї">
+										<span>для неї</span>
 									</a>
 								</li>
 								<li>
-									<a href="#for-him" class="open-popup">
-										для нього
+									<a href="#for-him" class="open-popup" aria-label="для нього">
+										<span>для нього</span>
 									</a>
 								</li>
 								<li>
-									<a href="brands.html">
-										бренди
+									<a href="brands.html" aria-label="бренди">
+										<span>бренди</span>
 									</a>
 								</li>
 								<li>
-									<a href="#sale" class="open-popup">
-										розпродаж
+									<a href="#sale" class="open-popup" aria-label="розпродаж">
+										<span>розпродаж</span>
 									</a>
 								</li>
 							</ul>
@@ -51,8 +51,8 @@
 					</div>
 				</div>
 				<div class="header__col">
-					<a href="#" class="header__tel">
-						(050) 021-71-37
+					<a href="#" class="header__tel" aria-label="(050) 021-71-37">
+						<span>(050) 021-71-37</span>
 					</a>
 					<div class="header__lang">
 						<ul>
@@ -68,15 +68,21 @@
 							</li>
 						</ul>
 					</div>
-					<a href="#" class="header__favorite header__icon_link" aria-label="Обране">
+					<a href="#" class="header__favorite header__icon_link is-min" aria-label="Обране">
 						<svg width="20" height="20">
 							<use href="img/sprites.svg#favorite"></use>
 						</svg>
+						<!-- <svg width="20" height="20">
+							<use href="img/sprites.svg#favorite-active"></use>
+						</svg> -->
 					</a>
-					<a href="#search-popup" class="header__search header__icon_link open-popup" aria-label="Пошук">
+					<a href="#search-popup" class="header__search header__icon_link open-popup is-min" aria-label="Пошук">
 						<svg width="20" height="20">
 							<use href="img/sprites.svg#search"></use>
 						</svg>
+						<!-- <svg width="20" height="20">
+							<use href="img/sprites.svg#search-active"></use>
+						</svg> -->
 					</a>
 					<a href="#cart-popup" class="header__cart header__icon_link open-popup" aria-label="Кошик">
 						<span data-length="0">
@@ -84,7 +90,7 @@
 								<use href="img/sprites.svg#cart"></use>
 							</svg>
 						</span>
-						Кошик
+						<span>Кошик</span>
 					</a>
 				</div>
 			</div>

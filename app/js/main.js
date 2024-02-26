@@ -283,7 +283,7 @@ scroll();
 calcCart();
 
 
-document.querySelectorAll(".index_hero__nav_name, .index_hero__nav_block").forEach(indexNavItemElement => {
+document.querySelectorAll(".index_hero__nav_item").forEach(indexNavItemElement => {
 
 	const item = indexNavItemElement.closest(".index_hero__nav_item");
 
@@ -313,7 +313,6 @@ document.querySelectorAll(".index_hero__nav_item").forEach(item => {
 		}
 	})
 })
-
 
 const productBuy = document.querySelector(".product__buy"), productFixedPanel = document.querySelector(".product__fixed_panel");
 if(productBuy && productFixedPanel) {

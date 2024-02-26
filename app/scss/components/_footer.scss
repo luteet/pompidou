@@ -146,9 +146,33 @@
 		a {
 			color: var(--white);
 
-			display: block;
+			display: inline-block;
 			line-height: 1;
 			padding: 0.35rem 0;
+
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; bottom: 0.1563rem;
+				width: 100%; height: 0.0625rem;
+				transform: scaleX(0);
+				transform-origin: left top;
+				background: var(--white);
+
+				transition: transform .3s ease, background .3s ease;
+			}
+
+			@media (any-hover: hover) {
+				&:hover::before {
+					transform: scaleX(1);
+				}
+			
+				&:active::before {
+					transition: transform .3s ease, background .2s ease;
+					background: #808080;
+				}
+			}
 		}
 	}
 
@@ -160,9 +184,32 @@
 			color: var(--white);
 			font-weight: 300;
 
-			display: block;
+			display: inline-block;
 			line-height: 1;
 			padding: 0.5rem 0;
+
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0; bottom: 0.1563rem;
+				width: 100%; height: 0.0625rem;
+				transform: scaleX(0);
+				transform-origin: left top;
+				background: var(--white);
+
+				transition: transform .3s ease, background .3s ease;
+			}
+
+			@media (any-hover: hover) {
+				&:hover::before {
+					transform: scaleX(1);
+				}
+			
+				&:active::before {
+					background: #808080;
+				}
+			}
 		}
 	}
 
@@ -217,6 +264,15 @@
 		a {
 			color: #808080;
 			letter-spacing: -0.04rem;
+
+			@media (any-hover: hover) {
+
+				transition: color .2s ease;
+
+				&:hover {
+					color: var(--white);
+				}
+			}
 		}
 	}
 
