@@ -1,7 +1,7 @@
 .index_hero {
 
-	min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 80px));
-	min-height: calc(100svh - var(--height-header, 80px));
+	min-height: calc(var(--svh,1vh) * 100 - var(--height-header, 5.56vw));
+	min-height: calc(100svh - var(--height-header, 5.56vw));
 
 	@include _992 {
 		min-height: auto;

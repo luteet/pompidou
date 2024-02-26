@@ -25,6 +25,11 @@ html {
 
 	@include _992 {
 		font-size: 1.111111vw;
+		//font-size: 0.833333vw;
+	}
+
+	@media (min-width: 1500px) {
+		font-size: 0.833333vw;
 	}
 }
 

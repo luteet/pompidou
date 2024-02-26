@@ -9,7 +9,8 @@
 	min-height: 19.0625rem;
 
 	@include _992 {
-		min-height: 29.3125rem;
+		//min-height: 29.3125rem;
+		min-height: 32.57vw;
 
 		display: grid;
 		grid-template-columns: 100%;

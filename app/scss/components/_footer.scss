@@ -115,6 +115,10 @@
 			width: 3rem; height: 3rem;
 			border-radius: 50%;
 
+			svg {
+				width: 50%; height: auto;
+			}
+
 			border: 0.0625rem solid var(--white);
 			color: var(--white);
 

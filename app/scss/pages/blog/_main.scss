@@ -52,22 +52,26 @@
 		@include _992 {
 			&:nth-child(1), &:nth-child(7):not(:nth-last-child(1), :nth-last-child(2)) {
 				grid-row: 2 span;
-				min-height: 41.875rem;
+				//min-height: 41.875rem;
+				min-height: 46.53vw;
 			}
 	
 			&:nth-child(2):last-child {
 				grid-row: 2 span;
-				min-height: 41.875rem;
+				//min-height: 41.875rem;
+				min-height: 46.53vw;
 			}
 	
 			&:nth-child(5):not(:last-child) {
 				grid-row: 2 span;
-				min-height: 41.875rem;
+				//min-height: 41.875rem;
+				min-height: 46.53vw;
 			}
 	
 			&:nth-child(6n + 13):not(:nth-last-child(1), :nth-last-child(2)) {
 				grid-row: 2 span;
-				min-height: 41.875rem;
+				//min-height: 41.875rem;
+				min-height: 46.53vw;
 				opacity: .1;
 			}
 	
@@ -78,7 +82,8 @@
 	
 			&:nth-child(6n + 11) {
 				grid-row: 2 span;
-				min-height: 41.875rem;
+				//min-height: 41.875rem;
+				min-height: 46.53vw;
 			}
 		}
 

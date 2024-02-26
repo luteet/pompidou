@@ -249,6 +249,10 @@
 		@include _992 {
 			max-width: 13.125rem;
 		}
+
+		@media (min-width: 1500px) {
+			max-width: 14.58vw;
+		}
 	}
 
 	// .carousel__slider_track
