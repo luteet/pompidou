@@ -27,12 +27,17 @@ export default function Popup(arg) {
 
 					popup.style.display = 'flex';
 
-					body.classList.remove('is-popup-active');
+					/* body.classList.remove('is-popup-active');
 					html.style.setProperty('--popup-padding', window.innerWidth - body.offsetWidth + 'px');
+					body.classList.add('is-popup-active'); */
 					body.classList.add('is-popup-active');
 
-					if (saveID) history.pushState('', "", id);
+					if (saveID && !popup.classList.contains("not-save-id")) {
+						history.pushState('', "", id);
+					}
+					
 					popup.classList.add('is-open');
+					arg.onOpen();
 
 					setTimeout(() => {
 						if (!initStart) {
@@ -65,35 +70,44 @@ export default function Popup(arg) {
 				popup = popupClose.closest('.popup');
 			}
 
-			if (popup.classList.contains('is-transition-none')) popup.classList.remove('is-transition-none')
+			if(popup) {
+				if (popup.classList.contains('is-transition-none')) popup.classList.remove('is-transition-none')
 
-			setTimeout(() => {
-
-				popup.classList.remove('is-active');
-
-				function closeFunc() {
-					const activePopups = document.querySelectorAll('.popup.is-active');
-
-					if (activePopups.length < 1) {
-						body.classList.remove('is-popup-active');
-						html.style.setProperty('--popup-padding', '0px');
+				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+					if(link.getAttribute("href") == "#" + popup.getAttribute("id")) {
+						link.classList.remove("is-open")
 					}
+				})
 
-					if (saveID) {
-						removeHash();
-						if (activePopups[activePopups.length - 1]) {
-							history.pushState('', "", "#" + activePopups[activePopups.length - 1].getAttribute('id'));
+				setTimeout(() => {
+
+					popup.classList.remove('is-active');
+
+					function closeFunc() {
+						const activePopups = document.querySelectorAll('.popup.is-active');
+
+						if (activePopups.length < 1) {
+							body.classList.remove('is-popup-active');
+							//html.style.setProperty('--popup-padding', '0px');
 						}
+
+						if (saveID) {
+							removeHash();
+							if (activePopups[activePopups.length - 1]) {
+								history.pushState('', "", "#" + activePopups[activePopups.length - 1].getAttribute('id'));
+							}
+						}
+
+						popupCheckClose = true;
+						popup.classList.remove('is-open');
+						if(!popup.classList.contains("nav_popup") && !popup.classList.contains("nav_popup_2")) popup.style.display = 'none';
 					}
 
-					popupCheckClose = true;
-					popup.classList.remove('is-open');
-					popup.style.display = 'none';
-				}
+					setTimeout(closeFunc, 400)
 
-				setTimeout(closeFunc, 400)
+				}, 0)
 
-			}, 0)
+			}
 
 		}
 

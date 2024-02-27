@@ -27,11 +27,13 @@ export default function resize(params) {
 			minWidth(); // > size
 		}
 	}
+
+	const cart = document.querySelectorAll(".checkout__cart, .cart_popup__body");
 	
 	function resizeFunc() {
 	
 		if(params.header) params.html.style.setProperty("--height-header", params.header.offsetHeight + "px");
-		if(banner) params.html.style.setProperty("--height-banner", banner.offsetHeight + "px");
+		//if(banner) params.html.style.setProperty("--height-banner", banner.offsetHeight + "px");
 
 		params.html.style.setProperty("--vh", Number.parseFloat(window.innerHeight * 0.01).toFixed(2) + "px");
 		if(windowSize != window.innerWidth) {
@@ -39,6 +41,8 @@ export default function resize(params) {
 		}
 		
 		windowSize = window.innerWidth;
+
+		if(!document.body.classList.contains("is-popup-active")) params.html.style.setProperty("--width-scrollbar", window.innerWidth - document.body.offsetWidth + 'px');
 	
 		resizeCheckFunc(992,
 			function () {  // screen > 992px
@@ -64,6 +68,18 @@ export default function resize(params) {
 	
 			}
 		);
+
+		cart.forEach(cart => {
+			const content = cart.querySelector(".cart_popup__list_container");
+			if(cart.classList.contains("cart_popup__body")) {
+				if(cart.closest(".popup.is-active")) {
+					if(content.querySelector(".simplebar-content")) content.style.setProperty('--height', cart.offsetHeight - content.querySelector(".simplebar-content").scrollHeight + 'px');
+				}
+			} else {
+				if(content)
+				cart.querySelector(".cart_popup__list_container").style.setProperty('--height', content.offsetHeight - (cart.offsetHeight - window.innerHeight) + 'px')
+			}
+		})
 	
 	}
 	

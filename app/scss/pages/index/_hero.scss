@@ -220,14 +220,29 @@
 				font-family: var(--title-font);
 			}
 
+			span {
+				display: inline-block;
+				position: relative;
+			}
+
+			span::before {
+				content: '';
+				position: absolute;
+				left: 0; bottom: -0.125rem;
+				width: 100%; height: 0.0625rem;
+				transform: scaleX(0);
+				background: var(--white);
+
+				transition: transform .3s ease, background .3s ease;
+			}
+
 			@media (any-hover: hover) {
-				transition: opacity .3s ease;
-				&:hover {
-					opacity: .8;
+				&:hover span::before {
+					transform: scaleX(1);
 				}
 			
-				&:active {
-					opacity: .6;
+				&:active span::before {
+					background: #808080;
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 export default function filter(params) {
 
-	if(params.resultList) params.countCheckboxes()
+	if(params.resultList) params.countCheckboxes();
 
 	document.querySelectorAll(".filter__item").forEach(filterItem => {
 
@@ -10,7 +10,9 @@ export default function filter(params) {
 
 		inputs.forEach(input => {
 			input.addEventListener("change", () => {
-				params.countCheckboxes()
+				params.countCheckboxes();
+				params.main.classList.add("is-loading");
+				params.onChange();
 			})
 		})
 
@@ -36,6 +38,13 @@ export default function filter(params) {
 					
 					target.setAttribute("aria-label", currentText)
 					target.querySelector(".categories_filter__item_checked").textContent = currentText;
+
+					if(!input.closest('li').querySelector("li")) {
+						block.closest(".categories_filter__item").classList.remove("is-active")
+					}
+
+					params.main.classList.add("is-loading");
+					params.onChange();
 		
 				} else {
 		
@@ -74,6 +83,11 @@ export default function filter(params) {
 					
 					target.setAttribute("aria-label", currentText)
 					target.querySelector(".sort__target_checked").textContent = currentText;
+
+					block.closest(".sort__wrapper").classList.remove("is-active");
+
+					params.main.classList.add("is-loading");
+					params.onChange();
 		
 				} else {
 		

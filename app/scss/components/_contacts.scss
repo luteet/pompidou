@@ -37,7 +37,7 @@
 			}
 		}
 
-		&.is-full {
+		label.is-full {
 			
 			@include _768 {
 				margin-top: 2.75rem;
@@ -49,7 +49,7 @@
 
 			resize: none;
 
-			height: 6.25rem;
+			height: 6.25rem; width: 100%;
 
 			letter-spacing: -0.04em;
 

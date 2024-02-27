@@ -95,7 +95,7 @@
 
 		opacity: 0; visibility: hidden;
 		transition: opacity .3s ease, visibility .3s ease;
-		z-index: 2;
+		z-index: 3;
 
 		@include _992 {
 			position: static;
@@ -120,7 +120,7 @@
 		a {
 
 			@include _992 {
-				border-top: 0.0625rem solid #D0D0D0;
+				border-bottom: 0.0625rem solid #D0D0D0;
 				padding: 2rem 0;
 
 				font-size: 1.125rem;
@@ -175,6 +175,9 @@
 
 		//min-height: 18.75rem;
 		min-height: 20.83vw;
+		&[data-aos^=fade][data-aos^=fade].aos-animate {
+			transform: none;
+		}
 	}
 
 	// .page_section__content

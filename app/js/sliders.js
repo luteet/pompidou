@@ -1,4 +1,29 @@
 export default function sliders() {
+
+	
+	// =-=-=-=-=-=-=-=-=-=- <Get-device-type> -=-=-=-=-=-=-=-=-=-=-
+	
+	const getDeviceType = () => {
+	
+		const ua = navigator.userAgent;
+		if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+			return "tablet";
+		}
+	
+		if (
+			/Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+			ua
+			)
+		) {
+			return "mobile";
+		}
+		return "desktop";
+	
+	};
+	
+	// =-=-=-=-=-=-=-=-=-=- </Get-device-type> -=-=-=-=-=-=-=-=-=-=-
+	
+
 	document.querySelectorAll('.carousel__slider').forEach(sliderElement => {
 	
 		const slider = new Splide(sliderElement, {
@@ -14,7 +39,7 @@ export default function sliders() {
 			arrows: false,
 
 			autoScroll: {
-				speed: 1,
+				speed: 0,
 				pauseOnHover: true,
 			},
 
@@ -59,7 +84,7 @@ export default function sliders() {
 			arrows: false,
 
 			autoScroll: {
-				speed: 1,
+				speed: 0,
 			},
 
 			intersection: {
@@ -149,6 +174,61 @@ export default function sliders() {
 		});
 	
 		slider.mount();
+	
+	})
+
+	document.querySelectorAll('.product_card__gallery_main').forEach(sliderElement => {
+
+		const navSliderElement = sliderElement.closest(".product_card__gallery").querySelector(".product_card__gallery_nav");
+		let navSlider;
+		if(navSliderElement) {
+			navSlider = new Splide(sliderElement.closest(".product_card__gallery").querySelector(".product_card__gallery_nav"), {
+				perPage: sliderElement.querySelectorAll(".splide__slide").length,
+				gap: "0.25rem",
+				isNavigation: true,
+	
+				arrows: false,
+				pagination: false,
+			})
+
+			sliderElement.parentElement.addEventListener("mouseleave", () => {
+				if(getDeviceType() == "desktop") {
+					slider.go(0);
+				}
+			})
+	
+			sliderElement.closest(".product_card__gallery").querySelectorAll(".product_card__gallery_nav .splide__slide").forEach((slide, index) => {
+				slide.addEventListener("mouseenter", () => {
+					if(getDeviceType() == "desktop") {
+						slider.go(index);
+					}
+				})
+			})
+		}
+	
+		const slider = new Splide(sliderElement, {
+	
+			type: "fade",
+			perPage: 1,
+			speed: 500,
+			arrows: false,
+			pagination: false,
+	
+			/* breakpoints: {
+				992: {
+					// params
+				},
+	
+				550: {
+					// params
+				}
+			} */
+	
+		});
+	
+		if(navSlider) slider.sync(navSlider);
+		slider.mount();
+		if(navSlider) navSlider.mount();
 	
 	})
 }

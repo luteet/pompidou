@@ -14,7 +14,7 @@
 
 		display: grid;
 		grid-template-columns: 100%;
-		grid-template-rows: 0.7fr max-content 0.7fr;
+		grid-template-rows: 0.5fr 2fr 0.5fr;
 	}
 
 	// .not_found__hero
@@ -30,7 +30,7 @@
 		text-align: center;
 
 		@include _992 {
-			padding: 3.5rem 0;
+			padding: 0 0 3.5rem;
 		}
 	}
 
@@ -74,7 +74,7 @@
 		padding: 1rem 0;
 
 		@include _768 {
-			padding: 1.5rem 0;
+			padding: 1rem 0;
 			flex-direction: row;
 		}
 	}

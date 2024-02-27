@@ -16,6 +16,8 @@
 
 	padding-top: 2.5rem;
 
+	display: none;
+
 	// .footer__block
 
 	&__block {
@@ -145,6 +147,9 @@
 		//margin-top: -0.75rem;
 		a {
 			color: var(--white);
+			&::first-letter {
+				text-transform: uppercase;
+			}
 
 			display: inline-block;
 			line-height: 1;

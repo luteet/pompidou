@@ -6,6 +6,7 @@ import filter from "./filter.js"
 import sliders from "./sliders.js"
 import calcCart from './calc-cart.js'
 //import dropDown from "./drop-down.js"
+import inputTel from "./input-tel.js"
 import rangeSlider from "./range-slider.js"
 import getDeviceType from './get-device-type.js'
 import imageAspectRatio from "./image-aspect-ratio.js"
@@ -15,7 +16,9 @@ import filterCheckSearch from "./filter-check-search.js"
 const 
 	body = document.querySelector('body'),
 	html = document.querySelector('html'),
+	main = document.querySelector("main"),
 	menu = document.querySelectorAll('.header__burger, .header, body'),
+	banner = document.querySelector(".banner"),
 	header = document.querySelector('.header');
 
 
@@ -28,17 +31,164 @@ imageAspectRatio();
 
 
 
+// =-=-=-=-=-=-=-=-=-=-=-=- <get-coords> -=-=-=-=-=-=-=-=-=-=-=-=
+
+function getCoords(elem) {
+	let box = elem.getBoundingClientRect();
+
+	return {
+		top: box.top + window.scrollY,
+		right: box.right + window.scrollX,
+		bottom: box.bottom + window.scrollY,
+		left: box.left + window.scrollX
+	};
+}
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </get-coords> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
 // =-=-=-=-=-=-=-=-=-=-=-=- <popup> -=-=-=-=-=-=-=-=-=-=-=-=
 
 const popup = new Popup({
-	saveID: true, // false
+	//saveID: true, // false
+	onOpen: () => {
+		const cart = document.querySelectorAll(".cart_popup__body");
+		cart.forEach(cart => {
+			const content = cart.querySelector(".cart_popup__list_container");
+			if(cart.closest(".popup.is-open")) {
+				console.log(content.querySelector(".simplebar-content"))
+				if(content.querySelector(".simplebar-content")) content.style.setProperty('--height', cart.offsetHeight - content.querySelector(".simplebar-content").scrollHeight + 'px');
+			}
+		})
+	}
 });
 
 popup.init()
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </popup> -=-=-=-=-=-=-=-=-=-=-=-=
 
+const navPopups = document.querySelectorAll(".nav_popup, .nav_popup_2");
+document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
+	popupBlock.addEventListener("mouseleave", () => {
+		if(getDeviceType() == "desktop") {
+			/* if(!link.classList.contains("is-open")) {
+				popup.open(link.getAttribute("href"));
+				link.classList.add("is-open");
+			} */
 
+			document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+				link.classList.remove("is-open");
+				const popupElement = document.querySelector(link.getAttribute("href"));
+				if(popupElement) {
+					popupElement.classList.remove("is-active");
+					setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+					body.classList.remove("is-popup-active");
+				}
+			})
+		}
+	})
+})
+
+document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
+	link.addEventListener("mouseenter", () => {
+		if(getDeviceType() == "desktop") {
+			if(!link.classList.contains("is-open")) {
+
+				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+					link.classList.remove("is-open")
+
+					const popupElement = document.querySelector(link.getAttribute("href"));
+					if(popupElement) {
+						popupElement.classList.remove("is-active");
+						body.classList.remove("is-popup-active");
+						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+					}
+					//if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.remove("is-active")
+				})
+
+				
+				//if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.add("is-active")
+				link.classList.add("is-open");
+
+				const popupElement = document.querySelector(link.getAttribute("href"));
+				if(popupElement) {
+					//popupElement.style.top = getCoords(header).top + header.offsetHeight + "px";
+					if(header) {
+						if(banner) {
+							html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
+							html.style.setProperty("--header-y", getCoords(header).top + 'px');
+						} else {
+							html.style.setProperty("--header-y", getCoords(header).top + 'px');
+						}
+					}
+
+					popupElement.classList.add("is-active-2");
+					popupElement.classList.add("is-active");
+					body.classList.add("is-popup-active");
+				}
+
+				//link.classList.add("is-open");
+			}
+		}
+	})
+
+	link.addEventListener("click", (event) => {
+
+		if(link.getAttribute("href").indexOf("#") == 0) event.preventDefault();
+
+		if(getDeviceType() != "desktop") {
+			if(!link.classList.contains("is-open")) {
+
+				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+
+					link.classList.remove("is-open");
+
+					const popupElement = document.querySelector(link.getAttribute("href"));
+					if(popupElement) {
+						popupElement.classList.remove("is-active");
+						body.classList.remove("is-popup-active");
+						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+					}
+				})
+				
+				const popupElement = document.querySelector(link.getAttribute("href"));
+				if(popupElement) {
+					//popupElement.style.top = (getCoords(header).top - window.innerHeight) + "px";
+					popupElement.classList.add("is-active");
+					popupElement.classList.add("is-active-2");
+					body.classList.add("is-popup-active");
+				}
+				
+				link.classList.add("is-open");
+
+			} else {
+				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+					link.classList.remove("is-open")
+					/* if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.remove("is-active") */
+					const popupElement = document.querySelector(link.getAttribute("href"));
+					if(popupElement) {
+						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+						popupElement.classList.remove("is-active");
+						body.classList.remove("is-popup-active");
+					}
+				})
+			}
+		}
+	})
+
+	/* link.addEventListener("mouseleave", (event) => {
+		//console.log(event.toElement)
+		if(getDeviceType() == "desktop" && event.toElement) {
+			if(!event.toElement.closest(".popup")) {
+				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+					link.classList.remove("is-open")
+					popup.close(link.getAttribute("href"));
+				})
+			}
+		}
+	}) */
+})
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <filter> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -212,6 +362,8 @@ resize({
 	html, header, popup
 });
 
+//document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupElement => popupElement.style.setProperty("display", "flex"));
+
 // =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
@@ -227,26 +379,33 @@ sliders()
 // =-=-=-=-=-=-=-=-=-=-=-=- <filter> -=-=-=-=-=-=-=-=-=-=-=-=
 
 filter({
-	resultList,
-	countCheckboxes: () => {countCheckboxes()}
+	resultList, main,
+	countCheckboxes: () => {countCheckboxes()},
+	onChange: () => {
+		setTimeout(() => main.classList.remove("is-loading"), 1000)
+	}
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </filter> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <drop-down> -=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=- <input-tel-mask> -=-=-=-=-=-=-=-=-=-=-=-=
 
-//dropDown();
+inputTel()
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </drop-down> -=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=- </input-tel-mask> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <range-input> -=-=-=-=-=-=-=-=-=-=-=-=
 
 rangeSlider(function() {
-	if(resultList) countCheckboxes()
+	if(resultList) {
+		countCheckboxes();
+		main.classList.add("is-loading");
+		setTimeout(() => main.classList.remove("is-loading"), 1000)
+	}
 });
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </range-input> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -326,3 +485,24 @@ if(productBuy && productFixedPanel) {
 	io.observe(productBuy);
 }
 
+document.querySelectorAll(".product_card").forEach(productCard => {
+
+	let blurTimeout;
+
+	productCard.addEventListener("mouseenter", (event) => {
+		if(getDeviceType() == "desktop") {
+			clearTimeout(blurTimeout);
+			productCard.style.height = productCard.offsetHeight + "px";
+			productCard.style.zIndex = 2;
+		}
+	})
+
+	productCard.addEventListener("mouseleave", (event) => {
+		if(getDeviceType() == "desktop") {
+			blurTimeout = setTimeout(() => {
+				productCard.style.removeProperty("z-index")
+				productCard.style.removeProperty("height")
+			},400)
+		}
+	})
+})

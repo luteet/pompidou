@@ -1,9 +1,16 @@
-export default function rangeSlider(onChange) {
+export default function rangeSlider(onChange, onAfterChange) {
+
+	const main = document.querySelector(".main");
+
 	document.querySelectorAll('.range').forEach(range => {
 
 		const minInput = range.querySelector('[data-is-min]'),
 		maxInput = range.querySelector('[data-is-max]'),
 		rangeElement = range.querySelector('.range__element');
+
+		const blurEvent = new Event("blur");
+
+		
 
 		const rangeEl = new window.JSR.JSR({
 			modules: [
@@ -36,11 +43,15 @@ export default function rangeSlider(onChange) {
 
 		minInput.addEventListener("blur", () => {
 			rangeEl.setRealValue(0,Number(minInput.value.replace(/[\D]+/g,"")));
+			onChange();
 		})
 
 		maxInput.addEventListener("blur", () => {
 			rangeEl.setRealValue(1,Number(maxInput.value.replace(/[\D]+/g,"")));
+			onChange();
 		})
+
+		
 		
 		rangeEl.onValueChange(function (ValueChangeHandler) {
 
@@ -54,7 +65,7 @@ export default function rangeSlider(onChange) {
 				maxInput.value = ValueChangeHandler['real'];
 			}
 
-			onChange();
+			
 		})
 		
 		document.querySelectorAll(".filter_reset").forEach(resetButton => {
@@ -66,6 +77,10 @@ export default function rangeSlider(onChange) {
 				rangeEl.setRealValue(1,Number(maxInput.dataset.value));
 			})
 		})
+
+		rangeElement.addEventListener("touchend", (event) => onChange());
+		rangeElement.addEventListener("mouseup", (event) => onChange());
+		//range.querySelectorAll(".jsr_slider").forEach(target => target.addEventListener("touchend", (event) => onAfterChange()));
 
 	})
 }

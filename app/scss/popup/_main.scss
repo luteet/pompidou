@@ -1,7 +1,7 @@
 body {
-	padding-right: var(--popup-padding);
 	&.is-popup-active {
 		overflow: hidden;
+		padding-right: var(--width-scrollbar);
 	}
 }
 

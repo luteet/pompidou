@@ -108,8 +108,12 @@
 				display: inline-block;
 				position: relative;
 			}
+
+			&.is-open span::before {
+				transform: scaleX(1);
+			}
 			
-			& span::before {
+			span::before {
 				content: '';
 				position: absolute;
 				left: 0; bottom: -0.125rem;
@@ -119,6 +123,10 @@
 				background: var(--white);
 
 				transition: transform .3s ease, background .3s ease;
+			}
+
+			&.is-active span::before {
+				transform: scaleX(1);
 			}
 
 			@media (any-hover: hover) {
@@ -182,7 +190,7 @@
 
 		@include _992 {
 			padding: 0.8rem 1.5rem;
-			border-left: 1px solid #404040;
+			border-left: 0.0625rem solid #404040;
 
 			span {
 				display: inline-block;
@@ -345,7 +353,7 @@
 			padding: 0.5938rem 1.5rem;
 		}
 
-		border-left: 1px solid #404040;
+		border-left: 0.0625rem solid #404040;
 
 		@include _992 {
 			padding: 0.5rem 1.5rem;
@@ -528,8 +536,6 @@
 			}
 		}
 	}
-
-	
 
 	// .header__mob_popup
 
