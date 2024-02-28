@@ -309,6 +309,9 @@
 	// .product__gallery_slide
 
 	&__gallery_slide {
+		a {
+			display: block;
+		}
 		img {
 			object-position: center top;
 		}

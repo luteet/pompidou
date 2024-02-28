@@ -2,23 +2,7 @@ export default function scroll() {
 
 	const heroFooter = document.querySelector(".hero__footer.is-sticky"), heroFooterWrapper = document.querySelector(".hero__footer_wrapper");
 
-	const html = document.querySelector("html"), header = document.querySelector(".header"), banner = document.querySelector(".banner");
-	
-	function getCoords(elem) {
-		let box = elem.getBoundingClientRect();
-	
-		return {
-			top: box.top + window.scrollY,
-			right: box.right + window.scrollX,
-			bottom: box.bottom + window.scrollY,
-			left: box.left + window.scrollX
-		};
-	}
-
 	function scrollFunc() {
-
-		//if(header) html.style.setProperty("--header-y", getCoords(header).top + 'px');
-		//if(banner) html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px");
 
 		if(heroFooterWrapper && heroFooter) {
 			
@@ -63,19 +47,6 @@ export default function scroll() {
 	}
 
 	scrollFunc();
-
-	/* if(header) {
-		if(banner) {
-			setInterval(() => {
-				html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
-				html.style.setProperty("--header-y", getCoords(header).top + 'px');
-			},1000)
-		} else {
-			setInterval(() => {
-				html.style.setProperty("--header-y", getCoords(header).top + 'px');
-			},1000)
-		}
-	} */
 
 	window.addEventListener("scroll", scrollFunc);
 

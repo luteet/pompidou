@@ -37,6 +37,7 @@
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splidejs/splide-extension-intersection": "^0.2.0",
     "aos": "^2.3.4",
+    "fslightbox": "^3.4.1",
     "mm-jsr": "^3.0.2",
     "simplebar": "^6.2.5"
   }
