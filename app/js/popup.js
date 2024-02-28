@@ -6,6 +6,8 @@ export default function Popup(arg) {
 		popupCheck = true,
 		popupCheckClose = true;
 
+	let navPopupTimeout;
+
 	const removeHash = function () {
 		let uri = window.location.toString();
 		if (uri.indexOf("#") > 0) {
@@ -75,6 +77,8 @@ export default function Popup(arg) {
 
 				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
 					if(link.getAttribute("href") == "#" + popup.getAttribute("id")) {
+						clearTimeout(navPopupTimeout);
+						navPopupTimeout = setTimeout(() => {if(!popup.classList.contains("is-active")) popup.classList.remove("is-active-2")},400)
 						link.classList.remove("is-open")
 					}
 				})

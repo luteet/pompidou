@@ -69,6 +69,7 @@ popup.init()
 // =-=-=-=-=-=-=-=-=-=-=-=- </popup> -=-=-=-=-=-=-=-=-=-=-=-=
 
 const navPopups = document.querySelectorAll(".nav_popup, .nav_popup_2");
+let closeTimeout;
 document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
 	popupBlock.addEventListener("mouseleave", () => {
 		if(getDeviceType() == "desktop") {
@@ -82,7 +83,8 @@ document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
 				const popupElement = document.querySelector(link.getAttribute("href"));
 				if(popupElement) {
 					popupElement.classList.remove("is-active");
-					setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+					clearTimeout(closeTimeout);
+					closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
 					body.classList.remove("is-popup-active");
 				}
 			})
@@ -102,18 +104,17 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 					if(popupElement) {
 						popupElement.classList.remove("is-active");
 						body.classList.remove("is-popup-active");
-						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+						clearTimeout(closeTimeout);
+						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
 					}
-					//if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.remove("is-active")
+					
 				})
 
-				
-				//if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.add("is-active")
 				link.classList.add("is-open");
 
 				const popupElement = document.querySelector(link.getAttribute("href"));
 				if(popupElement) {
-					//popupElement.style.top = getCoords(header).top + header.offsetHeight + "px";
+					
 					if(header) {
 						if(banner) {
 							html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
@@ -128,7 +129,6 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 					body.classList.add("is-popup-active");
 				}
 
-				//link.classList.add("is-open");
 			}
 		}
 	})
@@ -148,13 +148,23 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 					if(popupElement) {
 						popupElement.classList.remove("is-active");
 						body.classList.remove("is-popup-active");
-						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+						clearTimeout(closeTimeout)
+						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
 					}
 				})
 				
 				const popupElement = document.querySelector(link.getAttribute("href"));
 				if(popupElement) {
-					//popupElement.style.top = (getCoords(header).top - window.innerHeight) + "px";
+
+					if(header) {
+						if(banner) {
+							html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
+							html.style.setProperty("--header-y", getCoords(header).top + 'px');
+						} else {
+							html.style.setProperty("--header-y", getCoords(header).top + 'px');
+						}
+					}
+					
 					popupElement.classList.add("is-active");
 					popupElement.classList.add("is-active-2");
 					body.classList.add("is-popup-active");
@@ -165,10 +175,11 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 			} else {
 				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
 					link.classList.remove("is-open")
-					/* if(document.querySelector(link.getAttribute("href"))) document.querySelector(link.getAttribute("href")).classList.remove("is-active") */
+					
 					const popupElement = document.querySelector(link.getAttribute("href"));
 					if(popupElement) {
-						setTimeout(() => popupElement.classList.remove("is-active-2"), 400)
+						clearTimeout(closeTimeout)
+						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
 						popupElement.classList.remove("is-active");
 						body.classList.remove("is-popup-active");
 					}

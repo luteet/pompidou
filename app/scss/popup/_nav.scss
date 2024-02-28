@@ -3,14 +3,23 @@
 	position: absolute;
 
 	padding: 0;
+	display: none;
 	//margin-top: calc(var(--height-header,2.5rem) - var(--height-banner,0px));
 
 	width: calc(100vw - var(--width-scrollbar,0px));
 	overflow: hidden;
-	//display: none;
+
+	display: none;
+	animation: 0.3s ease 0s 1 normal forwards;
+	animation-name: fadeOut;
+
+	&.popup.is-active {
+		opacity: 0; visibility: hidden;
+		animation-name: fadeIn2;
+	}
 
 	&.is-active-2 {
-		//display: flex;
+		display: flex !important;
 		top: calc(var(--header-y,0px) + var(--height-header,0px))
 	}
 
@@ -217,12 +226,17 @@
 	width: calc(100vw - var(--width-scrollbar,0px));
 	overflow: hidden;
 
+	display: none;
+	animation: 0.3s ease 0s 1 normal forwards;
+	animation-name: fadeOut;
+
 	&.popup.is-active {
-		//top: calc(var(--header-y,0px) + var(--height-header,0px))
+		opacity: 0; visibility: hidden;
+		animation-name: fadeIn2;
 	}
 
 	&.is-active-2 {
-		//display: flex;
+		display: flex !important;
 		top: calc(var(--header-y,0px) + var(--height-header,0px))
 	}
 
