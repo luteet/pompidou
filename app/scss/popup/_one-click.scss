@@ -28,6 +28,7 @@
 
 	&__close_btn {
 		right: 0.3125rem; top: 0.3125rem;
+		width: auto; height: auto;
 		svg {
 			width: 2rem; height: 2rem;
 		}
@@ -91,25 +92,39 @@
 		}
 
 		label {
-			display: block;
-			margin: 1.25rem 0 0.75rem 0;
 
-			font-family: var(--title-font);
-			font-size: 1.125rem;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 0.28em;
+			display: flex;
+			flex-direction: column;
 
-			@include _550 {
-				position: absolute;
-				width: 1px; height: 1px;
-				margin: -1px; padding: 0;
-				border: 0;
-				
-				white-space: nowrap;
-				clip-path: inset(100%);
-				clip: rect(0 0 0 0);
-				overflow: hidden;
+			> span {
+				display: block;
+				margin: 1.25rem 0 0.75rem 0;
+
+				font-family: var(--title-font);
+				font-size: 1.125rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.28em;
+
+				@include _550 {
+					position: absolute;
+					width: 1px; height: 1px;
+					margin: -1px; padding: 0;
+					border: 0;
+					
+					white-space: nowrap;
+					clip-path: inset(100%);
+					clip: rect(0 0 0 0);
+					overflow: hidden;
+				}
+			}
+
+			.invalid-feedback {
+				padding-top: 0.3125rem;
+				display: block;
+				color: red;
+				font-size: 0.875rem;
+				font-weight: 500;
 			}
 		}
 

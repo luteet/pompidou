@@ -20,7 +20,7 @@
 
 	&.is-active-2 {
 		display: flex !important;
-		top: calc(var(--header-y,0px) + var(--height-header,0px))
+		top: calc(var(--header-y,0px) + var(--height-header,0px) - 0.0625rem)
 	}
 
 	// .nav_popup__wrapper
@@ -48,14 +48,15 @@
 			padding: 2rem 1.25rem;
 		}
 
-		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem));
-		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem));
+		height: calc(var(--vh,1vh) * 100 + 0.0625rem - var(--height-header,2.5rem));
+		max-height: calc(var(--vh,1vh) * 100 + 0.0625rem - var(--height-header,2.5rem));
+
 		border-top: 0.0625rem solid #404040;
 	}
 
 	&__container {
-		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner,0px) - 4rem);
-		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner,0px) - 4rem);
+		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner-2,0px) - 4rem);
+		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner-2,0px) - 4rem);
 	}
 
 	// .nav_popup__close-btn
@@ -219,6 +220,7 @@
 
 	position: absolute;
 	top: 0;
+
 	//display: none;
 	padding: 0;
 	//margin-top: calc(var(--height-header,2.5rem) - var(--height-banner,0px));
@@ -237,7 +239,7 @@
 
 	&.is-active-2 {
 		display: flex !important;
-		top: calc(var(--header-y,0px) + var(--height-header,0px))
+		top: calc(var(--header-y,0px) + var(--height-header,0px) - 0.0625rem)
 	}
 
 	// .nav_popup_2__wrapper
@@ -261,8 +263,8 @@
 		max-width: 100%;
 		padding: 0; margin: 0;
 
-		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem));
-		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem));
+		height: calc(var(--vh,1vh) * 100 + 0.0625rem - var(--height-header,2.5rem));
+		max-height: calc(var(--vh,1vh) * 100 + 0.0625rem - var(--height-header,2.5rem));
 
 		@include _550 {
 			//padding: 4rem calc(var(--container-padding) / 2) 4rem var(--container-padding);
@@ -291,9 +293,9 @@
 	// .nav_popup_2__container
 
 	&__container {
-		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner,0px));
-		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner,0px));
-		padding: 4rem var(--container-padding);
+		max-height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner-2,0px));
+		height: calc(var(--vh,1vh) * 100 - var(--height-header,2.5rem) - var(--height-banner-2,0px));
+		padding: 3rem var(--container-padding);
 	}
 
 	// .nav_popup_2__row

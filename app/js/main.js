@@ -70,45 +70,38 @@ popup.init()
 
 const navPopups = document.querySelectorAll(".nav_popup, .nav_popup_2");
 let closeTimeout;
-document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
-	popupBlock.addEventListener("mouseleave", () => {
-		if(getDeviceType() == "desktop") {
-			/* if(!link.classList.contains("is-open")) {
-				popup.open(link.getAttribute("href"));
-				link.classList.add("is-open");
-			} */
+function closeNavPopup() {
+	document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
+		link.classList.remove("is-open");
+		const popupElement = document.querySelector(link.getAttribute("href"));
+		if(popupElement) {
+			popupElement.classList.remove("is-active");
+			clearTimeout(closeTimeout);
+			closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
+			body.classList.remove("is-popup-active");
+		}
+	})
+}
 
-			document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-				link.classList.remove("is-open");
-				const popupElement = document.querySelector(link.getAttribute("href"));
-				if(popupElement) {
-					popupElement.classList.remove("is-active");
-					clearTimeout(closeTimeout);
-					closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
-					body.classList.remove("is-popup-active");
-				}
-			})
+document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
+	popupBlock.addEventListener("mouseleave", (event) => {
+		if(getDeviceType() == "desktop") {
+
+			if(!event.toElement.classList.contains("is-open")) {
+				closeNavPopup();
+			}
+			
 		}
 	})
 })
 
 document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
+
 	link.addEventListener("mouseenter", () => {
 		if(getDeviceType() == "desktop") {
 			if(!link.classList.contains("is-open")) {
 
-				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-					link.classList.remove("is-open")
-
-					const popupElement = document.querySelector(link.getAttribute("href"));
-					if(popupElement) {
-						popupElement.classList.remove("is-active");
-						body.classList.remove("is-popup-active");
-						clearTimeout(closeTimeout);
-						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
-					}
-					
-				})
+				closeNavPopup();
 
 				link.classList.add("is-open");
 
@@ -117,7 +110,7 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 					
 					if(header) {
 						if(banner) {
-							html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
+							html.style.setProperty("--height-banner-2", header.getBoundingClientRect().top + "px")
 							html.style.setProperty("--header-y", getCoords(header).top + 'px');
 						} else {
 							html.style.setProperty("--header-y", getCoords(header).top + 'px');
@@ -140,25 +133,14 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 		if(getDeviceType() != "desktop") {
 			if(!link.classList.contains("is-open")) {
 
-				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-
-					link.classList.remove("is-open");
-
-					const popupElement = document.querySelector(link.getAttribute("href"));
-					if(popupElement) {
-						popupElement.classList.remove("is-active");
-						body.classList.remove("is-popup-active");
-						clearTimeout(closeTimeout)
-						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
-					}
-				})
+				closeNavPopup();
 				
 				const popupElement = document.querySelector(link.getAttribute("href"));
 				if(popupElement) {
 
 					if(header) {
 						if(banner) {
-							html.style.setProperty("--height-banner", header.getBoundingClientRect().top + "px")
+							html.style.setProperty("--height-banner-2", header.getBoundingClientRect().top + "px")
 							html.style.setProperty("--header-y", getCoords(header).top + 'px');
 						} else {
 							html.style.setProperty("--header-y", getCoords(header).top + 'px');
@@ -173,32 +155,19 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 				link.classList.add("is-open");
 
 			} else {
-				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-					link.classList.remove("is-open")
-					
-					const popupElement = document.querySelector(link.getAttribute("href"));
-					if(popupElement) {
-						clearTimeout(closeTimeout)
-						closeTimeout = setTimeout(() => {if(!popupElement.classList.contains("is-active")) popupElement.classList.remove("is-active-2")}, 400)
-						popupElement.classList.remove("is-active");
-						body.classList.remove("is-popup-active");
-					}
-				})
+				closeNavPopup();
 			}
 		}
 	})
 
-	/* link.addEventListener("mouseleave", (event) => {
+	link.addEventListener("mouseleave", (event) => {
 		//console.log(event.toElement)
 		if(getDeviceType() == "desktop" && event.toElement) {
 			if(!event.toElement.closest(".popup")) {
-				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-					link.classList.remove("is-open")
-					popup.close(link.getAttribute("href"));
-				})
+				closeNavPopup();
 			}
 		}
-	}) */
+	})
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <filter> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -287,7 +256,8 @@ function countCheckboxes() {
 
 click({
 	menu,
-	countCheckboxes: () => {countCheckboxes()}
+	countCheckboxes: () => {countCheckboxes()},
+	closeNavPopup: () => {closeNavPopup()},
 });
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </click-events> -=-=-=-=-=-=-=-=-=-=-=-=

@@ -2,6 +2,8 @@ import calcCart from './calc-cart.js'
 
 export default function click(params) {
 
+	const navPopups = document.querySelectorAll(".nav_popup, .nav_popup_2");
+
 	document.body.addEventListener('click', function (event) {
 
 		function $(elem) {
@@ -421,6 +423,18 @@ export default function click(params) {
 		}
 		
 		// =-=-=-=-=-=-=-=-=-=-=-=- </header-open-block> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+		if(!$(".nav_popup") && !$(".nav_popup_2") && !$(".header__nav_list > li > a")) {
+			params.closeNavPopup();
+		}
+		
+		/* navPopups.forEach(popupBlock => {
+			if(popupBlock.classList.contains("is-active")) {
+				
+			}
+		}) */
 
 	})
 }
