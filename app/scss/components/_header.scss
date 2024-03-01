@@ -94,8 +94,10 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		a {
+		a, button {
 			color: var(--white);
+			background: transparent;
+
 			display: block;
 			padding: 0.8rem 1.5rem;
 
@@ -364,6 +366,8 @@
 		line-height: 1;
 		text-transform: uppercase;
 		font-weight: 700;
+
+		background: transparent;
 
 		//transition: color .2s ease;
 
@@ -727,7 +731,7 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 1.25rem;
 
-		a {
+		a, button {
 			display: grid;
 			> * {
 				grid-area: 1/1;

@@ -1,5 +1,5 @@
-import Popup from "./popup.js"
-import click from "./click.js"
+import Popup from "./popup.js?v=1"
+import click from "./click.js?v=1"
 import resize from "./resize.js"
 import scroll from "./scroll.js"
 import filter from "./filter.js"
@@ -71,9 +71,10 @@ popup.init()
 const navPopups = document.querySelectorAll(".nav_popup, .nav_popup_2");
 let closeTimeout;
 function closeNavPopup() {
-	document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-		link.classList.remove("is-open");
-		const popupElement = document.querySelector(`#${link.dataset.for}`);
+	
+	document.querySelectorAll(".header__nav_list > li > button.is-open").forEach(button => {
+		button.classList.remove("is-open");
+		const popupElement = document.querySelector(`#${button.dataset.for}`);
 		if(popupElement) {
 			popupElement.classList.remove("is-active");
 			clearTimeout(closeTimeout);
@@ -95,17 +96,17 @@ document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
 	})
 })
 
-document.querySelectorAll(".header__nav_list > li > a[data-for]").forEach(link => {
+document.querySelectorAll(".header__nav_list > li > button[data-for]").forEach(button => {
 
-	link.addEventListener("mouseenter", () => {
-		if(getDeviceType() == "desktop" && link.dataset.for) {
-			if(!link.classList.contains("is-open")) {
+	button.addEventListener("mouseenter", () => {
+		if(getDeviceType() == "desktop" && button.dataset.for) {
+			if(!button.classList.contains("is-open")) {
 
 				closeNavPopup();
 
-				link.classList.add("is-open");
+				button.classList.add("is-open");
 
-				const popupElement = document.querySelector(`#${link.dataset.for}`);
+				const popupElement = document.querySelector(`#${button.dataset.for}`);
 
 				if(popupElement) {
 					
@@ -127,16 +128,14 @@ document.querySelectorAll(".header__nav_list > li > a[data-for]").forEach(link =
 		}
 	})
 
-	link.addEventListener("click", (event) => {
+	button.addEventListener("click", (event) => {
 
-		if(link.getAttribute("href").indexOf("#") == 0) event.preventDefault();
-
-		if(getDeviceType() != "desktop" && link.dataset.for) {
-			if(!link.classList.contains("is-open")) {
+		if(getDeviceType() != "desktop" && button.dataset.for) {
+			if(!button.classList.contains("is-open")) {
 
 				closeNavPopup();
 				
-				const popupElement = document.querySelector(`#${link.dataset.for}`);
+				const popupElement = document.querySelector(`#${button.dataset.for}`);
 
 				if(popupElement) {
 
@@ -154,7 +153,7 @@ document.querySelectorAll(".header__nav_list > li > a[data-for]").forEach(link =
 					body.classList.add("is-popup-active");
 				}
 				
-				link.classList.add("is-open");
+				button.classList.add("is-open");
 
 			} else {
 				closeNavPopup();
@@ -162,7 +161,7 @@ document.querySelectorAll(".header__nav_list > li > a[data-for]").forEach(link =
 		}
 	})
 
-	link.addEventListener("mouseleave", (event) => {
+	button.addEventListener("mouseleave", (event) => {
 		//console.log(event.toElement)
 		if(getDeviceType() == "desktop" && event.toElement) {
 			if(!event.toElement.closest(".popup")) {

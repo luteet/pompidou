@@ -53,21 +53,23 @@ export default function click(params) {
 
 		// =-=-=-=-=-=-=-=-=-=-=-=- <carousel-tab-nav> -=-=-=-=-=-=-=-=-=-=-=-=
 	
-		const carouselTabNavLink = $(".carousel__tab_nav a")
-		if(carouselTabNavLink) {
+		const carouselTabNavButton = $(".carousel__tab_nav button")
+		if(carouselTabNavButton) {
 		
 			event.preventDefault();
 
-			if(!carouselTabNavLink.classList.contains("is-active")) {
-				document.querySelectorAll(".carousel__tab_nav a.is-active").forEach(link => {
-					const block = document.querySelector(link.getAttribute("href"));
-					link.classList.remove("is-active");
+			if(!carouselTabNavButton.classList.contains("is-active")) {
+
+				carouselTabNavButton.closest(".carousel").querySelectorAll(".carousel__tab_nav button.is-active").forEach(button => {
+					const block = document.querySelector(`#${button.dataset.for}`);
+					button.classList.remove("is-active");
 					block.classList.remove("is-active");
 				});
 
-				const block = document.querySelector(carouselTabNavLink.getAttribute("href"));
+				const block = document.querySelector(`#${carouselTabNavButton.dataset.for}`);
 				block.classList.add("is-active");
-				carouselTabNavLink.classList.add("is-active")
+				carouselTabNavButton.classList.add("is-active");
+
 			}
 		
 		}
@@ -389,7 +391,7 @@ export default function click(params) {
 		
 			const parent = headerOpenBlock.closest(".header__mob_popup"),
 			main = parent.querySelector(".header__mob_popup_main"),
-			block = main.querySelector(`${headerOpenBlock.getAttribute("href")}`),
+			block = main.querySelector(`#${headerOpenBlock.dataset.for}`),
 			activeBlock = main.querySelector(".header__mob_popup_block.is-active");
 
 			main.classList.add("is-hidden");
@@ -426,7 +428,7 @@ export default function click(params) {
 
 
 
-		if(!$(".nav_popup") && !$(".nav_popup_2") && !$(".header__nav_list > li > a")) {
+		if(!$(".nav_popup") && !$(".nav_popup_2") && !$(".header__nav_list > li > button[data-for]")) {
 			params.closeNavPopup();
 		}
 		

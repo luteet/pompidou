@@ -98,7 +98,8 @@
 		flex-wrap: wrap;
 		gap: 1.25rem;
 
-		a {
+		a, button {
+			background: transparent;
 			color: #080808;
 			font-weight: 300;
 			letter-spacing: -0.04rem;
@@ -234,12 +235,7 @@
 			visibility: initial;
 		}
 
-
-
 		transition: visibility .5s ease;
-
-		
-
 		
 	}
 

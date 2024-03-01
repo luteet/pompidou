@@ -75,11 +75,11 @@ export default function Popup(arg) {
 			if(popup) {
 				if (popup.classList.contains('is-transition-none')) popup.classList.remove('is-transition-none')
 
-				document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
-					if(link.getAttribute("href") == "#" + popup.getAttribute("id")) {
+				document.querySelectorAll(".header__nav_list > li > button.is-open").forEach(button => {
+					if(button.dataset.for + popup.getAttribute("id")) {
 						clearTimeout(navPopupTimeout);
 						navPopupTimeout = setTimeout(() => {if(!popup.classList.contains("is-active")) popup.classList.remove("is-active-2")},400)
-						link.classList.remove("is-open")
+						button.classList.remove("is-open")
 					}
 				})
 
@@ -137,7 +137,12 @@ export default function Popup(arg) {
 				let popupOpen = thisTarget.closest('.open-popup');
 				if (popupOpen) {
 					event.preventDefault();
-					open(popupOpen.getAttribute('href'))
+					if(popupOpen.getAttribute('href')) {
+						open(popupOpen.getAttribute('href'))
+					} else if(popupOpen.dataset.for) {
+						open(`#${popupOpen.dataset.for}`)
+					}
+					
 				}
 
 				let popupClose = thisTarget.closest('.popup-close');

@@ -18,14 +18,14 @@
 						<div class="header__nav_body">
 							<ul class="header__nav_list">
 								<li>
-									<a href="#" data-for="for-her" aria-label="для неї">
+									<button type="button" data-for="for-her" aria-label="для неї">
 										<span>для неї</span>
-									</a>
+									</button>
 								</li>
 								<li>
-									<a href="#" data-for="for-him" aria-label="для нього">
+									<button type="button" data-for="for-him" aria-label="для нього">
 										<span>для нього</span>
-									</a>
+									</button>
 								</li>
 								<li>
 									<a href="brands.html" aria-label="бренди">
@@ -33,9 +33,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="#" data-for="sale" aria-label="розпродаж">
+									<button type="button" data-for="sale" aria-label="розпродаж">
 										<span>розпродаж</span>
-									</a>
+									</button>
 								</li>
 							</ul>
 						</div>
@@ -74,22 +74,22 @@
 							<use href="img/sprites.svg#favorite-active"></use>
 						</svg> -->
 					</a>
-					<a href="#search-popup" class="header__search header__icon_link open-popup is-min" aria-label="Пошук">
+					<button type="button" data-for="search-popup" class="header__search header__icon_link open-popup is-min" aria-label="Пошук">
 						<svg width="20" height="20">
 							<use href="img/sprites.svg#search"></use>
 						</svg>
 						<!-- <svg width="20" height="20">
 							<use href="img/sprites.svg#search-active"></use>
 						</svg> -->
-					</a>
-					<a href="#cart-popup" class="header__cart header__icon_link open-popup" aria-label="Кошик">
+					</button>
+					<button data-for="cart-popup" class="header__cart header__icon_link open-popup" aria-label="Кошик">
 						<span data-length="0">
 							<svg width="20" height="20">
 								<use href="img/sprites.svg#cart"></use>
 							</svg>
 						</span>
 						<span>Кошик</span>
-					</a>
+					</button>
 				</div>
 			</div>
 			<div class="header__row visible-on-mob">
@@ -713,14 +713,14 @@
 								</a>
 							</li>
 							<li>
-								<a href="#header-sale" class="header-open-block" aria-label="sale">
+								<button type="button" data-for="header-sale" class="header-open-block" aria-label="sale">
 									<picture>
 										<source srcset="img/header/header-nav-image-2.avif" type="image/avif">
 										<source srcset="img/header/header-nav-image-2.webp" type="image/webp">
 										<img src="img/header/header-nav-image-2.jpg" alt="" width="158" height="154" class="image-aspect-ratio" loading="lazy">
 									</picture>
 									<span>sale</span>
-								</a>
+								</button>
 							</li>
 						</ul>
 						<nav class="header__mob_nav">
