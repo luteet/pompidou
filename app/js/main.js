@@ -73,7 +73,7 @@ let closeTimeout;
 function closeNavPopup() {
 	document.querySelectorAll(".header__nav_list > li > a.is-open").forEach(link => {
 		link.classList.remove("is-open");
-		const popupElement = document.querySelector(link.getAttribute("href"));
+		const popupElement = document.querySelector(`#${link.dataset.for}`);
 		if(popupElement) {
 			popupElement.classList.remove("is-active");
 			clearTimeout(closeTimeout);
@@ -95,17 +95,18 @@ document.querySelectorAll(".nav_popup, .nav_popup_2").forEach(popupBlock => {
 	})
 })
 
-document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
+document.querySelectorAll(".header__nav_list > li > a[data-for]").forEach(link => {
 
 	link.addEventListener("mouseenter", () => {
-		if(getDeviceType() == "desktop") {
+		if(getDeviceType() == "desktop" && link.dataset.for) {
 			if(!link.classList.contains("is-open")) {
 
 				closeNavPopup();
 
 				link.classList.add("is-open");
 
-				const popupElement = document.querySelector(link.getAttribute("href"));
+				const popupElement = document.querySelector(`#${link.dataset.for}`);
+
 				if(popupElement) {
 					
 					if(header) {
@@ -130,12 +131,13 @@ document.querySelectorAll(".header__nav_list > li > a").forEach(link => {
 
 		if(link.getAttribute("href").indexOf("#") == 0) event.preventDefault();
 
-		if(getDeviceType() != "desktop") {
+		if(getDeviceType() != "desktop" && link.dataset.for) {
 			if(!link.classList.contains("is-open")) {
 
 				closeNavPopup();
 				
-				const popupElement = document.querySelector(link.getAttribute("href"));
+				const popupElement = document.querySelector(`#${link.dataset.for}`);
+
 				if(popupElement) {
 
 					if(header) {
