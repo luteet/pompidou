@@ -467,9 +467,10 @@
 							<button class="cart_popup__reset" type="button">Очистити все</button>
 						</div>
 						<div class="cart_popup__list_container">
-							<div class="min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+							<div class="min-scrollbar">
 								<ul class="cart_popup__list">
 									@@loop("_cart-item.html", [
+										{},
 										{},
 										{},
 									])
@@ -534,7 +535,7 @@
 						<use href="img/sprites.svg#close"></use>
 					</svg>
 				</button>
-				<div class="cart_popup__container popup-container custom-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+				<div class="cart_popup__container popup-container">
 					<button type="button" class="cart_popup__close-btn popup-close-btn popup-close visible-on-mob" title="Закрити">
 						<svg width="32" height="32">
 							<use href="img/sprites.svg#close"></use>
@@ -552,7 +553,7 @@
 							<button class="cart_popup__reset" type="button">Очистити все</button>
 						</div> -->
 						<div class="cart_popup__list_container">
-							<div class="min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+							<div class="min-scrollbar">
 								<ul class="cart_popup__list">
 									@@loop("_cart-item.html", [
 										{},

@@ -15,7 +15,7 @@
 
 			display: grid;
 			grid-template-columns: 100%;
-			grid-template-rows: 0.725fr 0.9fr 1fr;
+			grid-template-rows: 9.375rem auto 9.375rem;
 		}
 	}
 
@@ -66,7 +66,7 @@
 
 	&__product_name {
 		z-index: 2;
-		align-self: self-end;
+		align-self: center;
 		grid-column: 1; grid-row: 2;
 
 		a {

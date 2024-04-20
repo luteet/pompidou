@@ -29,7 +29,15 @@ imageAspectRatio();
 
 // =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
 
+function generateCustomScrollbar() {
+	document.querySelectorAll(".cart_popup__list_container .min-scrollbar").forEach(targetElement => {
+		new SimpleBar(targetElement, {
+			autoHide: false,
+		})
+	})
+}
 
+generateCustomScrollbar();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <get-coords> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -51,14 +59,16 @@ function getCoords(elem) {
 // =-=-=-=-=-=-=-=-=-=-=-=- <popup> -=-=-=-=-=-=-=-=-=-=-=-=
 
 const popup = new Popup({
-	//saveID: true, // false
 	onOpen: () => {
 		const cart = document.querySelectorAll(".cart_popup__body");
 		cart.forEach(cart => {
 			const content = cart.querySelector(".cart_popup__list_container");
 			if(cart.closest(".popup.is-open")) {
-				console.log(content.querySelector(".simplebar-content"))
-				if(content.querySelector(".simplebar-content")) content.style.setProperty('--height', cart.offsetHeight - content.querySelector(".simplebar-content").scrollHeight + 'px');
+				if(content.querySelector(".simplebar-content")) {
+					content.style.setProperty('--height', `auto`);
+					const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
+					content.style.setProperty('--height', `${content.querySelector(".simplebar-content").offsetHeight - calcedHeight}px`);
+				}
 			}
 		})
 	}

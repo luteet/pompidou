@@ -1438,8 +1438,42 @@
 							<button class="cart_popup__reset" type="button">Очистити все</button>
 						</div>
 						<div class="cart_popup__list_container">
-							<div class="min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+							<div class="min-scrollbar">
 								<ul class="cart_popup__list">
+									<li class="cart_popup__item cart_item">
+										<div class="cart_item__body">
+											<a href="product.html" class="cart_item__image">
+												<picture>
+													<source srcset="img/product/product-image-1.avif" type="image/avif">
+													<source srcset="img/product/product-image-1.webp" type="image/webp">
+													<img src="img/product/product-image-1.jpg" alt="" width="120" height="168" class="image-aspect-ratio" loading="lazy">
+												</picture>
+											</a>
+											<div class="cart_item__info">
+												<h3 class="cart_item__name">пуховик pinko</h3>
+												<div class="cart_item__price">
+													<del>14 900 ₴</del><ins>6950 ₴</ins>
+												</div>
+											</div>
+											<button class="cart_item__remove" type="button" aria-label="Видалити">
+												<span aria-hidden="true" class="visible-on-desktop">Видалити</span>
+												<svg aria-hidden="true" width="32" height="32" class="visible-on-mob">
+													<use href="img/sprites.svg#close"></use>
+												</svg>
+											</button>
+											<ul class="cart_item__settings">
+												<li>
+													Розмір: 42
+												</li>
+											</ul>
+											<div class="cart_item__length">
+												<button class="cart_item__length_minus" type="button" aria-label="+"></button>
+												<input type="text" inputmode="numeric" data-price-without-discount="14900" data-price="6950" data-max="100" value="2" class="cart_item__length_value">
+												<button class="cart_item__length_plus" type="button" aria-label="+"></button>
+											</div>
+											<b class="cart_item__total" data-cart-current-price></b>
+										</div>
+									</li>
 									<li class="cart_popup__item cart_item">
 										<div class="cart_item__body">
 											<a href="product.html" class="cart_item__image">
@@ -1927,7 +1961,7 @@
 						<use href="img/sprites.svg#close"></use>
 					</svg>
 				</button>
-				<div class="cart_popup__container popup-container custom-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+				<div class="cart_popup__container popup-container">
 					<button type="button" class="cart_popup__close-btn popup-close-btn popup-close visible-on-mob" title="Закрити">
 						<svg width="32" height="32">
 							<use href="img/sprites.svg#close"></use>
@@ -1945,7 +1979,7 @@
 							<button class="cart_popup__reset" type="button">Очистити все</button>
 						</div> -->
 						<div class="cart_popup__list_container">
-							<div class="min-scrollbar" data-simplebar data-simplebar-auto-hide="false">
+							<div class="min-scrollbar">
 								<ul class="cart_popup__list">
 									<li class="cart_popup__item cart_item">
 										<div class="cart_item__body">

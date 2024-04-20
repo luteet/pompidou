@@ -29,9 +29,6 @@ export default function Popup(arg) {
 
 					popup.style.display = 'flex';
 
-					/* body.classList.remove('is-popup-active');
-					html.style.setProperty('--popup-padding', window.innerWidth - body.offsetWidth + 'px');
-					body.classList.add('is-popup-active'); */
 					body.classList.add('is-popup-active');
 
 					if (saveID && !popup.classList.contains("not-save-id")) {
@@ -39,9 +36,10 @@ export default function Popup(arg) {
 					}
 					
 					popup.classList.add('is-open');
-					arg.onOpen();
 
 					setTimeout(() => {
+						arg.onOpen();
+						
 						if (!initStart) {
 							popup.classList.add('is-active');
 							setTimeout(() => popupCheck = true, 400)
@@ -92,7 +90,6 @@ export default function Popup(arg) {
 
 						if (activePopups.length < 1) {
 							body.classList.remove('is-popup-active');
-							//html.style.setProperty('--popup-padding', '0px');
 						}
 
 						if (saveID) {

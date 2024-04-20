@@ -246,11 +246,11 @@
 	& &__list_container > * {
 		//max-height: calc(var(--height) - 7rem);
 		@include _992 {
-			max-height: calc(var(--height) - 7rem); min-height: 10rem;
+			max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
 		}
 
 		@media (min-height: 64rem) and (min-width: 992px) {
-			max-height: calc(var(--height) - 9rem);
+			max-height: calc(var(--height) - 0.5rem);
 		}
 	}
 	
@@ -272,7 +272,7 @@
 			overflow: hidden;
 
 			@include _992 {
-				max-height: calc(var(--height) - 2rem); min-height: 10rem;
+				max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
 				overflow-y: auto;
 				padding-right: 1.25rem;
 				margin-right: 0;	

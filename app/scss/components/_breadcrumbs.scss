@@ -6,11 +6,16 @@
 	}
 
 	font-weight: 300;
+	letter-spacing: -0.04em;
+	leading-trim: both;
+	text-edge: cap;
+
+	white-space: nowrap;
+	overflow-x: auto;
 
 	// .breadcrumbs__link
 
 	&__link {
-		letter-spacing: -0.04em;
 		color: var(--secondary);
 
 		@media (any-hover: hover) {
@@ -36,5 +41,6 @@
 
 	&__current {
 		color: #808080;
+		
 	}
 }

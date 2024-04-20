@@ -16,8 +16,6 @@
 
 	padding-top: 2.5rem;
 
-	display: none;
-
 	// .footer__block
 
 	&__block {
@@ -225,12 +223,10 @@
 
 		@include _768 {
 			padding-top: 4.65rem;
-
-			display: grid;
-			grid-template-columns: auto 12.5rem;
 		}
 
 		@include _992 {
+			display: grid;
 			grid-column: 4 span;
 			grid-template-columns: 15rem auto 12.5rem;
 		}
@@ -289,6 +285,10 @@
 		
 		@include _992 {
 			grid-column: 3; grid-row: 1;
+			justify-content: flex-end;
+
+			padding: 0; 
+			border-top: 0;
 		}
 
 		display: flex;
@@ -298,12 +298,6 @@
 		padding: 1.5rem 0;
 		border-top: 0.0625rem solid #404040;
 		
-		@include _768 {
-			padding: 0; 
-			border-top: 0;
-
-			justify-content: flex-end;
-		}
 
 		gap: 2rem;
 

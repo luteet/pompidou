@@ -1,6 +1,6 @@
 export default function resize(params) {
 
-	const banner = document.querySelector(".banner");
+	//const banner = document.querySelector(".banner");
 
 	let resizeCheck = {}, windowSize;
 
@@ -73,7 +73,11 @@ export default function resize(params) {
 			const content = cart.querySelector(".cart_popup__list_container");
 			if(cart.classList.contains("cart_popup__body")) {
 				if(cart.closest(".popup.is-active")) {
-					if(content.querySelector(".simplebar-content")) content.style.setProperty('--height', cart.offsetHeight - content.querySelector(".simplebar-content").scrollHeight + 'px');
+					if(content.querySelector(".simplebar-content")) {
+						content.style.setProperty('--height', `auto`);
+						const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
+						content.style.setProperty('--height', `${content.querySelector(".simplebar-content").offsetHeight - calcedHeight}px`);
+					}
 				}
 			} else {
 				if(content)

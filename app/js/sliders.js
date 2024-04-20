@@ -34,6 +34,8 @@ export default function sliders() {
 			perMove: 1,
 			gap: "1.25rem",
 			speed: 700,
+			//waitForTransition: true,
+			
 
 			pagination: false,
 			arrows: false,
@@ -60,6 +62,8 @@ export default function sliders() {
 				992: {
 					destroy: sliderElement.closest(".carousel__wrapper_block.is-min") ? false : true,
 					gap: 7,
+					flickPower: 100,
+					speed: 400,
 				},
 			}
 	
