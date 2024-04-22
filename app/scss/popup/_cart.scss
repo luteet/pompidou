@@ -245,6 +245,26 @@
 
 	& &__list_container > * {
 		//max-height: calc(var(--height) - 7rem);
+		
+		scrollbar-width: 4px; scrollbar-color: var(--secondary) var(--light);
+		
+		&::-webkit-scrollbar {
+			width: 4px;
+			border-radius: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			width: 4px;
+			border-radius: 5px;
+			background: var(--light);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			width: 4px;
+			border-radius: 5px;
+			background: var(--secondary);
+		}
+		
 		@include _992 {
 			max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
 		}
@@ -275,7 +295,26 @@
 				max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
 				overflow-y: auto;
 				padding-right: 1.25rem;
-				margin-right: 0;	
+				margin-right: 0;
+
+				scrollbar-width: 4px; scrollbar-color: var(--secondary) var(--light);
+		
+				&::-webkit-scrollbar {
+					width: 4px;
+					border-radius: 5px;
+				}
+
+				&::-webkit-scrollbar-track {
+					width: 4px;
+					border-radius: 5px;
+					background: var(--light);
+				}
+
+				&::-webkit-scrollbar-thumb {
+					width: 4px;
+					border-radius: 5px;
+					background: var(--secondary);
+				}
 			}
 		}
 	}

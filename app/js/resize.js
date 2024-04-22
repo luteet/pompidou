@@ -73,15 +73,16 @@ export default function resize(params) {
 			const content = cart.querySelector(".cart_popup__list_container");
 			if(cart.classList.contains("cart_popup__body")) {
 				if(cart.closest(".popup.is-active")) {
-					if(content.querySelector(".simplebar-content")) {
-						content.style.setProperty('--height', `auto`);
-						const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
-						content.style.setProperty('--height', `${content.querySelector(".simplebar-content").offsetHeight - calcedHeight}px`);
-					}
+					content.style.setProperty('--height', `auto`);
+					const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
+					content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
 				}
 			} else {
-				if(content)
-				cart.querySelector(".cart_popup__list_container").style.setProperty('--height', content.offsetHeight - (cart.offsetHeight - window.innerHeight) + 'px')
+				if(content) {
+					const calcedHeight = cart.scrollHeight + 35 - window.innerHeight;
+					content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
+				}
+				
 			}
 		})
 	

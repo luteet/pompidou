@@ -29,15 +29,7 @@ imageAspectRatio();
 
 // =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
 
-function generateCustomScrollbar() {
-	document.querySelectorAll(".cart_popup__list_container .min-scrollbar").forEach(targetElement => {
-		new SimpleBar(targetElement, {
-			autoHide: false,
-		})
-	})
-}
 
-generateCustomScrollbar();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <get-coords> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -64,11 +56,9 @@ const popup = new Popup({
 		cart.forEach(cart => {
 			const content = cart.querySelector(".cart_popup__list_container");
 			if(cart.closest(".popup.is-open")) {
-				if(content.querySelector(".simplebar-content")) {
-					content.style.setProperty('--height', `auto`);
-					const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
-					content.style.setProperty('--height', `${content.querySelector(".simplebar-content").offsetHeight - calcedHeight}px`);
-				}
+				content.style.setProperty('--height', `auto`);
+				const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
+				content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
 			}
 		})
 	}

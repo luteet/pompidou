@@ -267,8 +267,8 @@ section:not(.is-disable-container), .footer {
 .min-scrollbar {
 	.simplebar-track.simplebar-vertical {
 
-		width: 0.25rem;
-		border-radius: 0.3125rem;
+		width: 4px;
+		border-radius: 5px;
 		background: #E9E9E9;
 
 		.simplebar-scrollbar.simplebar-visible::before {
