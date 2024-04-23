@@ -29,7 +29,27 @@ imageAspectRatio();
 
 // =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
 
+function updateCartContainer() {
+	const cart = document.querySelectorAll(".cart_popup__body");
+	cart.forEach(cart => {
+		const content = cart.querySelector(".cart_popup__list_container");
+		if(cart.classList.contains("cart_popup__body")) {
+			if(cart.closest(".popup.is-active")) {
+				content.style.setProperty('--height', `auto`);
+				const calcedHeight = cart.querySelector(".cart_popup__container").scrollHeight - window.innerHeight;
+				content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
+			}
+		} else {
+			if(content) {
+				const calcedHeight = cart.scrollHeight + 35 - window.innerHeight;
+				content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
+			}
+			
+		}
+	})
+}
 
+window.updateCartContainer = updateCartContainer;
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <get-coords> -=-=-=-=-=-=-=-=-=-=-=-=
 
