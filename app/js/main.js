@@ -30,7 +30,7 @@ imageAspectRatio();
 // =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
 
 function updateCartContainer() {
-	const cart = document.querySelectorAll(".cart_popup__body");
+	const cart = document.querySelectorAll(".cart_popup__body, .checkout__cart");
 	cart.forEach(cart => {
 		const content = cart.querySelector(".cart_popup__list_container");
 		if(cart.classList.contains("cart_popup__body")) {
@@ -44,7 +44,6 @@ function updateCartContainer() {
 				const calcedHeight = cart.scrollHeight + 35 - window.innerHeight;
 				content.style.setProperty('--height', `${content.scrollHeight - calcedHeight}px`);
 			}
-			
 		}
 	})
 }
