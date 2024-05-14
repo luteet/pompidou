@@ -31,10 +31,34 @@
 		scroll-margin-top: var(--height-header);
 
 		//margin-top: 2.1875rem;
+		.cart_popup__list_container {
+			display: grid;
+			grid-template-rows: 0fr;
+
+			transition: grid-template-rows .4s ease;
+		}
 		
 		@include _992 {
 			grid-column: 2; grid-row: 1/4;
 			margin-top: 0;
+			min-height: calc(100vh - 2.5rem);
+
+			display: flex;
+			flex-direction: column;
+
+			.cart_popup__table {
+				flex: 1 1;
+			}
+
+			.cart_popup__list_container {
+				display: block;
+			}
+
+			.simplecheckout-block {
+				flex: 1 1;
+				display: flex;
+				flex-direction: column;
+			  }
 
 			padding: 2rem var(--container-padding) 1.5rem;
 			background: #F4F4F4;

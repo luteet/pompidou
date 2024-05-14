@@ -239,7 +239,9 @@
 	&__table.is-null &__list_container, &__table.is-null &__list_container > * {
 		max-height: none; min-height: 0;
 		@include _992 {
-			max-height: none; min-height: 0;
+			max-height: none; min-height: 5rem;
+			height: auto;
+			overflow-y: visible;
 		}
 	}
 
@@ -266,33 +268,38 @@
 		}
 		
 		@include _992 {
-			max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
+			/* max-height: calc(var(--height) - 0.5rem); */ height: 100%; min-height: 10rem;
 		}
 
 		@media (min-height: 64rem) and (min-width: 992px) {
-			max-height: calc(var(--height) - 0.5rem);
+			//max-height: calc(var(--height) - 0.5rem);
+			height: 100%;
 		}
 	}
 	
 
 	&__list_container {
-		display: grid;
-		grid-template-rows: 0fr;
+		flex: 1 1;
+		position: relative;
 
-		transition: grid-template-rows .4s ease;
+		
 
-		border-bottom: 0.0625rem solid #D0D0D0;
+		border-bottom: 0.0625rem solid #e7e7e7;
 
 		@include _992 {
 			border-bottom: 0;
 			display: block;
+			min-height: 10rem;
 		}
 
 		> * {
 			overflow: hidden;
 
 			@include _992 {
-				max-height: calc(var(--height) - 0.5rem); min-height: 10rem;
+				position: absolute;
+				left: 0; top: 0;
+				width: 100%;
+				/* max-height: calc(var(--height) - 0.5rem); */ height: 100%; min-height: 10rem;
 				overflow-y: auto;
 				padding-right: 1.25rem;
 				margin-right: 0;
@@ -336,9 +343,12 @@
 		padding: 1.25rem 0;
 		@include _550 {
 			padding: 1.5rem 0 2rem;
+			
 		}
 
-		border-bottom: 0.0625rem solid #E7E7E7;
+		@include _992 {
+			border-bottom: 0.0625rem solid #E7E7E7;
+		}
 	}
 
 	&__footer + &__slider {
@@ -394,7 +404,7 @@
 	// .cart_popup__prices
 
 	&__prices {
-		flex: 1 1;
+		//flex: 1 1;
 
 		display: flex;
 		flex-direction: column;
@@ -425,6 +435,10 @@
 
 				padding-top: 1rem; padding-bottom: 1rem;
 
+				&:nth-child(1) {
+					border-top: 0;
+				}
+
 				border-top: 1px solid #E7E7E7;
 
 				@include _550 {
@@ -439,6 +453,9 @@
 				white-space: nowrap;
 
 				border-top: 1px solid #E7E7E7;
+				&:nth-child(2) {
+					border-top: 0;
+				}
 				padding-left: 1rem;
 
 				padding-top: 1rem; padding-bottom: 1rem;
